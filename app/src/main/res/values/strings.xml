@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GeoTest_1.0</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="capitalsButton">Capitals</string>
+    <string name="flagsButton">Flags</string>
+    <string name="note1">You pick</string>
+    <string name="note2">right answers from</string>
+    <string name="note3">Your rating is</string>
+</resources>

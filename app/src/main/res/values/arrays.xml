@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Questions">
+        <item>/nCapital of Russia/Moscow/London/Saint Petersburg/Ekaterinburg/1/</item>
+        <item>/nCapital of Chile/Buenos Aires/Santiago/Beijing/Rio de Janeiro/2/</item>
+        <item>/nCapital of USA/New York/Seatlle/Washington/Chicago/3/</item>
+        <item>/nCapital of Canada/Vancouver/Toronto/New York/Ottawa/4/</item>
+        <item>/nCapital of Argentina/Buenos Aires/Santiago/Mendoza/San Antonio/1/</item>
+        <item>/nCapital of China/Seul/Beijing/Tokio/Vladivostok/2/</item>
+        <item>/nCapital of Japan/Saigon/Beijing/Tokio/Minas Tirith/3/</item>
+        <item>/nCapital of Germany/Hamburg/Munich/Frankfurt/Berlin/4/</item>
+    </array>
+</resources>
