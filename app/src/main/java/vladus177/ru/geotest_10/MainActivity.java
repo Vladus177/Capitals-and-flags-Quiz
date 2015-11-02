@@ -36,6 +36,15 @@ public class MainActivity extends ActionBarActivity {
 
             }
         });
+
+        flagsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FlagsActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     @Override

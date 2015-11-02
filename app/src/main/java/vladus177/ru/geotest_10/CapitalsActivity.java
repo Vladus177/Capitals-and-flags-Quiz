@@ -6,11 +6,14 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -139,8 +142,13 @@ public class CapitalsActivity extends Activity {
                     if (current_right==i){
                         wrong--;
                         right++;
-                        Toast.makeText(getApplicationContext(),"TRUE",Toast.LENGTH_SHORT).show();
+                        showToastRight(this.layout);
                     }
+                    else
+                    {
+                        showToastWrong(this.layout);
+                    }
+
                 }
             }
 
@@ -169,6 +177,24 @@ public class CapitalsActivity extends Activity {
         Toast.makeText(this, stat, Toast.LENGTH_LONG).show();
     }
 
+    public void showToastRight(View view) {
+        Toast toast = Toast.makeText(getApplicationContext(), "TRUE", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout toastContainer = (LinearLayout) toast.getView();
+        ImageView rightImageView = new ImageView(getApplicationContext());
+        rightImageView.setImageResource(R.drawable.right);
+        toastContainer.addView(rightImageView, 0);
+        toast.show();
+    }
+    public void showToastWrong(View view) {
+        Toast toast = Toast.makeText(getApplicationContext(),"FALSE", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout toastContainer = (LinearLayout) toast.getView();
+        ImageView rightImageView = new ImageView(getApplicationContext());
+        rightImageView.setImageResource(R.drawable.wrong);
+        toastContainer.addView(rightImageView, 0);
+        toast.show();
+    }
 
 
 
