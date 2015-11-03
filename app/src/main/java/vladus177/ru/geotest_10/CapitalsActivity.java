@@ -35,20 +35,9 @@ public class CapitalsActivity extends Activity {
     TextView Question;
     RelativeLayout layout;
 
-
-
-
-
-    //counts
-    int wrong = 0;
-    int right = 0;
-    int time = 0;
-    int totalTime = QUESTIONS;
-    int current_right = 0;
-
     //answer arrays and constants
     private static final int VARIANTS = 4;
-    private static final int QUESTIONS = 8;
+    private static final int QUESTIONS = 40;
     private static final char DELIMITTER = '/';
     private String[][] answerMatrix = new String[VARIANTS][QUESTIONS];
     private int[] rightAnswers = new int[QUESTIONS];
@@ -56,6 +45,12 @@ public class CapitalsActivity extends Activity {
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
 
+    //counts
+    int wrong = 0;
+    int right = 0;
+    int time = 0;
+    int totalTime = QUESTIONS;
+    int current_right = 0;
 
 
 
@@ -105,7 +100,7 @@ public class CapitalsActivity extends Activity {
         return str.substring(index1 + 2, index2 + 1);
     }
 
-    //Load Questions
+    //Load All Questions
     private void LoadQuestions(){
         Resources res=getResources();
         base=res.obtainTypedArray(R.array.Questions);
@@ -118,7 +113,7 @@ public class CapitalsActivity extends Activity {
         }
     }
 
-    //Load Question
+    //Load Next Question
     private void LoadQuestion() {
         // Почему то выдает отрицательное число: int qs=(int)System.currentTimeMillis()%QUESTIONS;
         Random rand = new Random();
@@ -152,7 +147,6 @@ public class CapitalsActivity extends Activity {
                 }
             }
 
-
         time++;
         LoadQuestion();
         if (time==totalTime){
@@ -165,7 +159,8 @@ public class CapitalsActivity extends Activity {
 
 
 
-    private void Stats() {
+   //stats
+   private void Stats() {
         double rating=Math.round(((double)right/((double)right+(double)wrong))*100);
         String stat="";
         stat+=getString(R.string.note1);
@@ -179,7 +174,7 @@ public class CapitalsActivity extends Activity {
 
     public void showToastRight(View view) {
         Toast toast = Toast.makeText(getApplicationContext(), "TRUE", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
         LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView rightImageView = new ImageView(getApplicationContext());
         rightImageView.setImageResource(R.drawable.right);
@@ -188,7 +183,7 @@ public class CapitalsActivity extends Activity {
     }
     public void showToastWrong(View view) {
         Toast toast = Toast.makeText(getApplicationContext(),"FALSE", Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
         LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView rightImageView = new ImageView(getApplicationContext());
         rightImageView.setImageResource(R.drawable.wrong);

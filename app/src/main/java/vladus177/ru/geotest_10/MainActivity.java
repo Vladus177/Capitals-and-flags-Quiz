@@ -1,17 +1,16 @@
 package vladus177.ru.geotest_10;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Random;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
    // buttons for main
     Button capitalsButton;
@@ -31,8 +30,8 @@ public class MainActivity extends ActionBarActivity {
         capitalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CapitalsActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, CapitalsActivity.class);
+                startActivity(intent2);
 
             }
         });
@@ -40,11 +39,12 @@ public class MainActivity extends ActionBarActivity {
         flagsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, FlagsActivity.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, FlagsActivity.class);
+                startActivity(intent2);
 
             }
-        });
+        }
+        );
     }
 
     @Override

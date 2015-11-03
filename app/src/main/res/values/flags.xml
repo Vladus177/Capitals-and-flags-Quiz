@@ -9,5 +9,37 @@
         <item>/nchina/Korea/China/Russia/Cuba/2/</item>
         <item>/njapan/Australia/India/Japan/China/3/</item>
         <item>/ngermany/France/Brazil/Canada/Germany/4/</item>
+        <item>/nItaly/Italy/France/Czech/Russia/1/</item>
+        <item>/nFrance/Czech/France/Italy/Germany/2/</item>
+        <item>/nUnitedKingdom/Ireland/France/United Kingdom/Germany/3/</item>
+        <item>/nPortugal/Spain/Slovakia/Italy/Portugal/4/</item>
+        <item>/nBrazil/Brazil/Chile/Argentina/Peru/1/</item>
+        <item>/nGreece/Turkey/Greece/Bulgaria/Cyprus/2/</item>
+        <item>/nTurkey/Syria/Egypt/Turkey/Malaysia/3/</item>
+        <item>/nBulgaria/Italy/Romania/Slovakia/Bulgaria/4/</item>
+        <item>/nRomania/Romania/Bulgaria/Italy/Greece/1/</item>
+        <item>/nMongolia/Malaysia/Mongolia/Vietnam/South Korea/2/</item>
+        <item>/nIran/Turkey/Bulgaria/Iran/Syria/3/</item>
+        <item>/nIraq/India/Turkey/Egypt/Iraq/4/</item>
+        <item>/nPoland/Poland/Czech/Bulgaria/Peru/1/</item>
+        <item>/nCzechRepublic/Slovakia/Czech/Germany/Bulgaria/2/</item>
+        <item>/nSlovakia/Netherlands/Poland/Slovakia/Czech/3/</item>
+        <item>/nEgypt/Turkey/Iraq/Syria/Cairo/4/</item>
+        <item>/nSweden/Sweden/Germany/Netherlands/Finland/1/</item>
+        <item>/nSpain/Germany/Spain/Portugal/Chile/2/</item>
+        <item>/nPeru/Argentina/Bolivia/Peru/Venezuela/3/</item>
+        <item>/nBolivia/Brazil/Peru/Columbia/Bolivia/4/</item>
+        <item>/nAustralia/Australia/New Zealand/United Kingdom/Canada/1/</item>
+        <item>/nNewZealand/Australia/New Zealand/United Kingdom/Usa/2/</item>
+        <item>/nCyprus/Greece/Georgia/Cyprus/Romania/3/</item>
+        <item>/nSouthKorea/Vietnam/Malaysia/Germany/South Korea/4/</item>
+        <item>/nMalaysia/Malaysia/Vietnam/South Korea/India/1/</item>
+        <item>/nIndia/Iraq/India/Iran/Bolivia/2/</item>
+        <item>/nSyria/Iran/Iraq/Syria/Egypt/3/</item>
+        <item>/nFinland/Netherlands/Italy/Sweden/Finland/4/</item>
+        <item>/nUkraine/Ukraine/Belarus/Netherlands/Russia/1/</item>
+        <item>/nRepublicofBelarus/Rusia/Belarus/Ukraine/Georgia/2/</item>
+        <item>/nGeorgia/Cyprus/Mongolia/Georgia/Russia/3/</item>
+        <item>/nNetherlands/Finland/Sweden/Germany/Netherlands/4/</item>
     </array>
 </resources>
