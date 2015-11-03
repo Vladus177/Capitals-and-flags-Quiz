@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Flags">
+        <item>/nrusia/Russia/China/United Kingdom/Canada/1/</item>
+        <item>/nchile/Argentina/Chile/Japan/Peru/2/</item>
+        <item>/nusa/Russia/Canada/Usa/Mexico/3/</item>
+        <item>/ncanada/Usa/Scotland/Brazil/Canada/4/</item>
+        <item>/nargentina/Argentina/Mexico/Greece/Columbia/1/</item>
+        <item>/nchina/Korea/China/Russia/Cuba/2/</item>
+        <item>/njapan/Australia/India/Japan/China/3/</item>
+        <item>/ngermany/France/Brazil/Canada/Germany/4/</item>
+    </array>
+</resources>

@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ public class FlagsActivity extends Activity {
     Button button4;
     TextView Question;
     RelativeLayout layout;
+    ImageView imageView;
 
 
 
@@ -44,6 +48,19 @@ public class FlagsActivity extends Activity {
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
 
+    // Image Array
+    int[] drawables = {
+            R.drawable.russia,
+            R.drawable.chile,
+            R.drawable.usa,
+            R.drawable.canada,
+            R.drawable.argentina,
+            R.drawable.china,
+            R.drawable.japan,
+            R.drawable.germany,
+
+    };
+
 
 
 
@@ -58,6 +75,7 @@ public class FlagsActivity extends Activity {
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
         button4 = (Button) findViewById(R.id.button4);
+        imageView = (ImageView) findViewById(R.id.imageView);
         Question = (TextView) findViewById(R.id.Question);
         buttons[0]=button1;
         buttons[1]=button2;
@@ -95,7 +113,7 @@ public class FlagsActivity extends Activity {
     //Load Questions
     private void LoadQuestions(){
         Resources res=getResources();
-        base=res.obtainTypedArray(R.array.Questions);
+        base=res.obtainTypedArray(R.array.Flags);
         for (int i=0;i<QUESTIONS;i++){
             quest[i]=getSubstringBetweenDelimiters(0,1,base.getString(i));
             for (int j=0;j<VARIANTS;j++){
@@ -110,34 +128,43 @@ public class FlagsActivity extends Activity {
         // Почему то выдает отрицательное число: int qs=(int)System.currentTimeMillis()%QUESTIONS;
         Random rand = new Random();
         int qs = rand.nextInt(QUESTIONS);
-        Question.setText(quest[qs]);
+       // Question.setText(quest[qs]);
         for (int i=0;i<VARIANTS;i++){
             buttons[i].setText(answerMatrix[i][qs]);
+            imageView.setImageResource(drawables[qs]);
         }
         current_right=rightAnswers[qs]-1;
     }
 
 
     //Click listener
-    public void onClick (View v) {
+    public void onClick(View v)
+    {
+
         wrong++;
-        for (int i = 0; i < VARIANTS; i++) {
-            if (v == buttons[i]) {
-                if (current_right == i) {
+        for (int i=0;i<VARIANTS;i++){
+            if (v==buttons[i]){
+                if (current_right==i){
                     wrong--;
                     right++;
-
+                    showToastRight(this.layout);
+                }
+                else
+                {
+                    showToastWrong(this.layout);
                 }
 
             }
-            time++;
-            LoadQuestion();
-            if (time == totalTime) {
-                Stats();
-                time = 0;
-                right = 0;
-                wrong = 0;
-            }
+        }
+
+
+        time++;
+        LoadQuestion();
+        if (time==totalTime){
+            Stats();
+            time=0;
+            right=0;
+            wrong=0;
         }
     }
 
@@ -145,8 +172,8 @@ public class FlagsActivity extends Activity {
 
     private void Stats() {
         double rating=Math.round(((double)right/((double)right+(double)wrong))*100);
-        String stat="";
-        stat+=getString(R.string.note1);
+        String stat = "";
+        stat += getString(R.string.note1);
         stat+=" "+right+" ";
         stat+=getString(R.string.note2);
         stat+=" "+totalTime+". ";
@@ -155,7 +182,27 @@ public class FlagsActivity extends Activity {
         Toast.makeText(this, stat, Toast.LENGTH_LONG).show();
     }
 
+    public void showToastRight(View view) {
+        Toast toast = Toast.makeText(getApplicationContext(), "TRUE", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout toastContainer = (LinearLayout) toast.getView();
+        ImageView rightImageView = new ImageView(getApplicationContext());
+        rightImageView.setImageResource(R.drawable.right);
+        toastContainer.addView(rightImageView, 0);
+        toast.show();
+    }
+    public void showToastWrong(View view) {
+        Toast toast = Toast.makeText(getApplicationContext(), "FALSE", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout toastContainer = (LinearLayout) toast.getView();
+        ImageView rightImageView = new ImageView(getApplicationContext());
+        rightImageView.setImageResource(R.drawable.wrong);
+        toastContainer.addView(rightImageView, 0);
+        toast.show();
+    }
+    public void LoadImage() {
 
 
+    }
 
 }
