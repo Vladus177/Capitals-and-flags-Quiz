@@ -2,7 +2,7 @@
 <resources>
     <color name="GREEN">#FF00FF00</color>
     <color name="RED">#ffff0300</color>
-    <color name="WindowColor">#ff000000</color>
-    <color name="TextColor">#F0E68C</color>
+    <color name="Black">#ff000000</color>
+    <color name="Ivory">#F0E68C</color>
 
 </resources>

@@ -1,50 +1,40 @@
 package vladus177.ru.geotest_10;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.FrameLayout;
 
 
 public class MainActivity extends Activity {
-
-   // buttons for main
-    Button capitalsButton;
-    Button flagsButton;
-
+    FragmentFlags fragF;
+    FragmentCapitals fragC;
+    FragmentButtons fragButtons;
+    FragmentTransaction fTrans;
+    FrameLayout container;
+    FrameLayout containerButtons;
+    FragmentManager myFragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragF=new FragmentFlags();
+        fragC=new FragmentCapitals();
+        fragButtons=new FragmentButtons();
+        container = (FrameLayout) findViewById(R.id.container);
+        containerButtons = (FrameLayout) findViewById(R.id.containerButtons);
+        myFragmentManager = getFragmentManager();
+        addFragmentButtons();
+        addFragmentFlags();
 
-        //find them all
-        capitalsButton = (Button)findViewById(R.id.capitalsButton);
-        flagsButton = (Button)findViewById(R.id.flagsButon);
-
-        //clickListener
-        capitalsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this, CapitalsActivity.class);
-                startActivity(intent2);
-
-            }
-        });
-
-        flagsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this, FlagsActivity.class);
-                startActivity(intent2);
-
-            }
-        }
-        );
     }
 
     @Override
@@ -68,7 +58,27 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
+    public void addFragmentFlags()
+    {
+        fTrans=myFragmentManager.beginTransaction();
+        fragF = new FragmentFlags();
+        fTrans.replace(R.id.container,fragF);
+        fTrans.commit();
+    }
+    public void addFragmentCapitals()
+    {
+        fTrans=myFragmentManager.beginTransaction();
+        fragC = new FragmentCapitals();
+        fTrans.replace(R.id.container,fragC);
+        fTrans.commit();
+    }
+    public void addFragmentButtons()
+    {
+        fTrans=myFragmentManager.beginTransaction();
+        fragButtons = new FragmentButtons();
+        fTrans.replace(R.id.containerButtons,fragButtons);
+        fTrans.commit();
+    }
 
 
 
