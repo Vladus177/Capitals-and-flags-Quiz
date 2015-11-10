@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -38,6 +39,7 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
     private String[] quest = new String[QUESTIONS];
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
+    ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
 
     //counts
     int wrong = 0;
@@ -67,10 +69,10 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         buttons[1] = button2;
         buttons[2] = button3;
         buttons[3] = button4;
-
-
+        //action
+        numGenerator(numbers);
         LoadQuestions();
-        LoadQuestion();
+        LoadQuestion(numbers.get(time));
         return fragment2View;
     }
 
@@ -94,7 +96,7 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         return str.substring(index1 + 2, index2 + 1);
     }
 
-    //Load All Questions
+    //Load All Questions from array
     private void LoadQuestions() {
         Resources res = getResources();
         base = res.obtainTypedArray(R.array.Questions);
@@ -109,14 +111,12 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
     }
 
     //Load Next Question
-    private void LoadQuestion() {
-        Random rand = new Random();
-        int qs = rand.nextInt(QUESTIONS);
-        Question.setText(quest[qs]);
+    private void LoadQuestion(int time) {
+        Question.setText(quest[time]);
         for (int i = 0; i < VARIANTS; i++) {
-            buttons[i].setText(answerMatrix[i][qs]);
+            buttons[i].setText(answerMatrix[i][time]);
         }
-        current_right = rightAnswers[qs] - 1;
+        current_right = rightAnswers[time] - 1;
     }
 
 
@@ -133,6 +133,7 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
     }
 
+    //Toast for correct answer
     public void showToastRight(View view) {
         Toast toast = Toast.makeText(getActivity(), "Правильно", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM, 0, 0);
@@ -143,6 +144,7 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         toast.show();
     }
 
+    //Toast for wrong answer
     public void showToastWrong(View view) {
         Toast toast = Toast.makeText(getActivity(), "Неправильно", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM, 0, 0);
@@ -171,12 +173,33 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         }
 
         time++;
-        LoadQuestion();
+        if (time < numbers.size()) {
+            LoadQuestion(numbers.get(time));
+        }
         if (time == totalTime) {
             Stats();
             time = 0;
             right = 0;
             wrong = 0;
+            numGenerator(numbers);
         }
+
     }
+
+    //creating Array of no repeating randomly generated numbers
+    private ArrayList numGenerator(ArrayList<Integer> numbersForQuestions) {
+        Random rand = new Random();
+        int number;
+
+        while (numbersForQuestions.size() < QUESTIONS) {
+            int random = rand.nextInt(QUESTIONS);
+            if (!numbersForQuestions.contains(random)) {
+                number = random;
+                numbersForQuestions.add(number);
+            }
+        }
+        return numbersForQuestions;
+
+    }
+
 }

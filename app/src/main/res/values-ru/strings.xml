@@ -6,7 +6,7 @@
     <string name="capitalsButton">Столицы</string>
     <string name="flagsButton">Флаги</string>
     <string name="note1">Вы набрали</string>
-    <string name="note2">правильных ответов</string>
+    <string name="note2">правильных ответов из</string>
     <string name="note3">Ваш рейтинг</string>
     <string name="imageFlag">flag</string>
 </resources>

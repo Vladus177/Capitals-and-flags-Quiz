@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -42,6 +43,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     private String[] quest = new String[QUESTIONS];
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
+    ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
 
     // Image Array
     int[] drawables = {
@@ -117,9 +119,9 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         buttons[2] = button3;
         buttons[3] = button4;
 
-
+        numGenerator(numbers);
         LoadQuestions();
-        LoadQuestion();
+        LoadQuestion(numbers.get(time));
 
         return fragment1View;
     }
@@ -159,15 +161,14 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     }
 
     //Load Next Question
-    private void LoadQuestion() {
-        Random rand = new Random();
-        int qs = rand.nextInt(QUESTIONS);
-        // Question.setText(quest[qs]);
+    private void LoadQuestion(int time) {
+
+        //Question.setText(quest[time]);
         for (int i = 0; i < VARIANTS; i++) {
-            buttons[i].setText(answerMatrix[i][qs]);
-            imageView.setImageResource(drawables[qs]);
+            buttons[i].setText(answerMatrix[i][time]);
+            imageView.setImageResource(drawables[time]);
         }
-        current_right = rightAnswers[qs] - 1;
+        current_right = rightAnswers[time] - 1;
     }
 
 
@@ -222,12 +223,30 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         }
 
         time++;
-        LoadQuestion();
+        if (time < numbers.size()) {
+            LoadQuestion(numbers.get(time));
+        }
         if (time == totalTime) {
             Stats();
             time = 0;
             right = 0;
             wrong = 0;
+            numGenerator(numbers);
         }
+    }
+    //creating Array of no repeating randomly generated numbers
+    private ArrayList numGenerator(ArrayList<Integer> numbersForQuestions) {
+        Random rand = new Random();
+        int number;
+
+        while (numbersForQuestions.size() < QUESTIONS) {
+            int random = rand.nextInt(QUESTIONS);
+            if (!numbersForQuestions.contains(random)) {
+                number = random;
+                numbersForQuestions.add(number);
+            }
+        }
+        return numbersForQuestions;
+
     }
 }
