@@ -11,6 +11,44 @@
         android:id="@+id/containerButtons"
         tools:layout="@layout/buttons_fragment">
     </FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/radioGroup">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Easy"
+                android:id="@+id/radioButtonEasy"
+                android:checked="false"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Medium"
+                android:id="@+id/radioButtonMedium"
+                android:checked="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Hard"
+                android:id="@+id/radioButtonHard"
+                android:checked="false"
+                android:layout_gravity="right"
+                android:layout_weight="1" />
+        </RadioGroup>
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"

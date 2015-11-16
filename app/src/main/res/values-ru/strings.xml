@@ -8,5 +8,11 @@
     <string name="note1">Вы набрали</string>
     <string name="note2">правильных ответов из</string>
     <string name="note3">Ваш рейтинг</string>
+    <string name="note4">из</string>
+    <string name="note5">Отвечено</string>
+    <string name="note6">вопросов</string>
     <string name="imageFlag">flag</string>
+    <string name="Easy">Тренировка</string>
+    <string name="Medium">Средний</string>
+    <string name="Hard">Тяжелый</string>
 </resources>

@@ -8,5 +8,11 @@
     <string name="note1">You pick</string>
     <string name="note2">right answers from</string>
     <string name="note3">Your rating is</string>
+    <string name="note4">of</string>
+    <string name="note5">Answered</string>
+    <string name="note6">questions</string>
     <string name="imageFlag">flag</string>
+    <string name="Easy">Easy</string>
+    <string name="Medium">Medium</string>
+    <string name="Hard">Hard</string>
 </resources>

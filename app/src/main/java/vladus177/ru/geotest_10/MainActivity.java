@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -24,6 +27,11 @@ public class MainActivity extends Activity {
     FrameLayout container2;
     FrameLayout containerButtons;
     FragmentManager myFragmentManager;
+    RadioGroup radioGroup;
+    RadioButton radioButtonEasy;
+    RadioButton radioButtonMedium;
+    RadioButton radioButtonHard;
+    public String game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +43,38 @@ public class MainActivity extends Activity {
         container = (FrameLayout) findViewById(R.id.container);
         container2 = (FrameLayout) findViewById(R.id.container2);
         containerButtons = (FrameLayout) findViewById(R.id.containerButtons);
+        radioGroup = (RadioGroup)findViewById(R.id.radioGroup);
+        radioButtonEasy = (RadioButton)findViewById(R.id.radioButtonEasy);
+        radioButtonMedium = (RadioButton)findViewById(R.id.radioButtonMedium);
+        radioButtonHard = (RadioButton)findViewById(R.id.radioButtonHard);
         myFragmentManager = getFragmentManager();
+        game="medium";
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                switch (checkedId) {
+                    case R.id.radioButtonEasy:
+                        game = "easy";
+                        restartFragment();
+                        break;
+                    case R.id.radioButtonMedium:
+                        game = "medium";
+                        restartFragment();
+                        break;
+                    case R.id.radioButtonHard:
+                        game = "hard";
+                        restartFragment();
+                        break;
+                    default:
+                        game="medium";
+                        break;
+                }
+
+
+            }
+        });
         addFragmentButtons();
-        //addFragmentFlags();
 
     }
 
@@ -45,6 +82,7 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
@@ -75,7 +113,7 @@ public class MainActivity extends Activity {
         else if(config.orientation == Configuration.ORIENTATION_LANDSCAPE)
         {
             fragF = new FragmentFlags();
-            fTrans.replace(R.id.container2,new FragmentFlags());
+            fTrans.replace(R.id.container2, new FragmentFlags());
             fTrans.commit();
         }
     }
@@ -105,4 +143,20 @@ public class MainActivity extends Activity {
         fTrans.commit();
     }
 
+    public String getLevel()
+    {
+        return game;
+    }
+    public void restartFragment()
+    {
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.container);
+        if (fragment instanceof FragmentCapitals)
+        {
+            fragment.getFragmentManager().beginTransaction().remove(this.fragC).commit();
+        }
+        else if (fragment instanceof FragmentFlags)
+        {
+            fragment.getFragmentManager().beginTransaction().remove(this.fragF).commit();
+        }
+    }
 }

@@ -3,6 +3,7 @@ package vladus177.ru.geotest_10;
 import android.app.Fragment;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,11 +30,12 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
     Button button3;
     Button button4;
     TextView Question;
+    TextView Counter;
     RelativeLayout layout;
 
     //answer arrays and constants
     private static final int VARIANTS = 4;
-    private static final int QUESTIONS = 40;
+    private static final int QUESTIONS = 110;
     private static final char DELIMITTER = '/';
     private String[][] answerMatrix = new String[VARIANTS][QUESTIONS];
     private int[] rightAnswers = new int[QUESTIONS];
@@ -40,6 +43,8 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
+    String strtext;
+    String answer;
 
     //counts
     int wrong = 0;
@@ -47,6 +52,7 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
     int time = 0;
     int totalTime = QUESTIONS;
     int current_right = 0;
+    int questionCounter = 0;
 
 
     @Override
@@ -65,10 +71,13 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
         Question = (TextView) fragment2View.findViewById(R.id.Question);
+        Counter = (TextView) fragment2View.findViewById(R.id.Counter);
         buttons[0] = button1;
         buttons[1] = button2;
         buttons[2] = button3;
         buttons[3] = button4;
+        strtext = ((MainActivity) getActivity()).getLevel();
+
         //action
         numGenerator(numbers);
         LoadQuestions();
@@ -112,25 +121,43 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
 
     //Load Next Question
     private void LoadQuestion(int time) {
+        questionCounter++;
         Question.setText(quest[time]);
         for (int i = 0; i < VARIANTS; i++) {
             buttons[i].setText(answerMatrix[i][time]);
         }
         current_right = rightAnswers[time] - 1;
+        answer = answerMatrix[current_right][time];
+
     }
 
 
     //stats
     private void Stats() {
-        double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
-        String stat = "";
-        stat += getString(R.string.note1);
-        stat += " " + right + " ";
-        stat += getString(R.string.note2);
-        stat += " " + totalTime + ". ";
-        stat += getString(R.string.note3);
-        stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-        Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
+        if (strtext.equals("easy"))
+        {
+            double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
+            String stat = "";
+            stat += getString(R.string.note1);
+            stat += " " + right + " ";
+            stat += getString(R.string.note2);
+            stat += " " + totalTime + ". ";
+            stat += getString(R.string.note3);
+            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+            Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            double rating = right;
+            String stat = "";
+            stat += getString(R.string.note1);
+            stat += " " + right + " ";
+            stat += getString(R.string.note2);
+            stat += " " + totalTime + ". ";
+            stat += getString(R.string.note3);
+            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+            Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
+        }
     }
 
     //Toast for correct answer
@@ -146,7 +173,7 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
 
     //Toast for wrong answer
     public void showToastWrong(View view) {
-        Toast toast = Toast.makeText(getActivity(), "Неправильно", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getActivity(), answer, Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM, 0, 0);
         LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView rightImageView = new ImageView(getActivity());
@@ -155,36 +182,136 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         toast.show();
     }
 
-    @Override
-    public void onClick(View v) {
+    //Toast game over
+    public void showToastGameOver(View view) {
+        Toast toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        //LinearLayout toastContainer = (LinearLayout) toast.getView();
+        //ImageView rightImageView = new ImageView(getActivity());
+        //rightImageView.setImageResource(R.drawable.wrong);
+        //toastContainer.addView(rightImageView, 0);
+        toast.show();
+    }
 
-        wrong++;
-        for (int i = 0; i < VARIANTS; i++) {
-            if (v == buttons[i]) {
-                if (current_right == i) {
-                    wrong--;
-                    right++;
-                    showToastRight(this.layout);
-                } else {
-                    showToastWrong(this.layout);
+    @Override //Click
+    public void onClick(View v) {
+        switch (strtext) {
+            case "easy":
+                totalTime = QUESTIONS;
+                Counter.setText(getString(R.string.note5)+ " "+ questionCounter
+                        + " " +getString(R.string.note4) + " " + totalTime
+                        + " " + getString(R.string.note6) );
+                wrong++;
+                for (int i = 0; i < VARIANTS; i++) {
+                    if (v == buttons[i]) {
+                        if (current_right == i) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+
+                    }
                 }
 
-            }
-        }
+                time++;
+                if (time < numbers.size()) {
+                    LoadQuestion(numbers.get(time));
+                }
+                if (time == totalTime) {
+                    Stats();
+                    time = 0;
+                    right = 0;
+                    wrong = 0;
+                    questionCounter=1;
+                    numGenerator(numbers);
+                }
+                break;
+            case "medium":
+                totalTime = 70;
+                Counter.setText(getString(R.string.note5)+ " "+ questionCounter
+                        + " " +getString(R.string.note4) + " " + totalTime
+                        + " " + getString(R.string.note6) );
+                wrong++;
+                for (int i = 0; i < VARIANTS; i++) {
+                    if (v == buttons[i]) {
+                        if (current_right == i) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
 
-        time++;
-        if (time < numbers.size()) {
-            LoadQuestion(numbers.get(time));
-        }
-        if (time == totalTime) {
-            Stats();
-            time = 0;
-            right = 0;
-            wrong = 0;
-            numGenerator(numbers);
+                    }
+                }
+
+                time++;
+                if (time < numbers.size()) {
+                    LoadQuestion(numbers.get(time));
+                }
+                if (time == totalTime) {
+                    Stats();
+                    time = 0;
+                    right = 0;
+                    wrong = 0;
+                    numGenerator(numbers);
+                }
+                if (wrong > 3) {
+                    showToastGameOver(this.layout);
+                    Stats();
+                    time = 0;
+                    right = 0;
+                    wrong = 0;
+                    closeFragment();
+
+                }
+                break;
+            case "hard":
+                totalTime = QUESTIONS;
+                Counter.setText(getString(R.string.note5)+ " "+ questionCounter
+                        + " " +getString(R.string.note4) + " " + totalTime
+                        + " " + getString(R.string.note6) );
+                wrong++;
+                for (int i = 0; i < VARIANTS; i++) {
+                    if (v == buttons[i]) {
+                        if (current_right == i) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+
+                    }
+                }
+
+                time++;
+                if (time < numbers.size()) {
+                    LoadQuestion(numbers.get(time));
+                }
+                if (time == totalTime) {
+                    Stats();
+                    time = 0;
+                    right = 0;
+                    wrong = 0;
+                    numGenerator(numbers);
+                }
+                if (wrong > 5) {
+                    showToastGameOver(this.layout);
+                    Stats();
+                    time = 0;
+                    right = 0;
+                    wrong = 0;
+                    closeFragment();
+
+                }
+                break;
         }
 
     }
+
 
     //creating Array of no repeating randomly generated numbers
     private ArrayList numGenerator(ArrayList<Integer> numbersForQuestions) {
@@ -201,5 +328,9 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         return numbersForQuestions;
 
     }
-
+    //closing the fragment
+    private void closeFragment()
+    {
+        getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+    }
 }

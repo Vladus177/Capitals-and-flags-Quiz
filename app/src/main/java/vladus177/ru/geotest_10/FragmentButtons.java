@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Switch;
 
 /**
@@ -16,6 +17,7 @@ public class FragmentButtons extends Fragment {
     Button capitalsButton;
     Button flagsButton;
 
+
     @Override
     public android.view.View onCreateView(LayoutInflater inflater, ViewGroup container,
                                           Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class FragmentButtons extends Fragment {
         //find them all
         capitalsButton = (Button)buttonsView.findViewById(R.id.capitalsButton);
         flagsButton = (Button)buttonsView.findViewById(R.id.flagsButon);
+
         capitalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

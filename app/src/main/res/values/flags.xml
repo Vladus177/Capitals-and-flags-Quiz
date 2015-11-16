@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="Flags">
-        <item>/nrusia/Russia/China/United Kingdom/Canada/1/</item>
-        <item>/nchile/Argentina/Chile/Japan/Peru/2/</item>
-        <item>/nusa/Russia/Canada/Usa/Mexico/3/</item>
-        <item>/ncanada/Usa/Scotland/Brazil/Canada/4/</item>
-        <item>/nargentina/Argentina/Mexico/Greece/Colombia/1/</item>
-        <item>/nchina/Korea/China/Russia/Cuba/2/</item>
-        <item>/njapan/Australia/India/Japan/China/3/</item>
-        <item>/ngermany/France/Brazil/Canada/Germany/4/</item>
+        <item>/nRussia/Russia/China/United Kingdom/Canada/1/</item>
+        <item>/nChile/Argentina/Chile/Japan/Peru/2/</item>
+        <item>/nUsa/Russia/Canada/Usa/Mexico/3/</item>
+        <item>/nCanada/Usa/Scotland/Brazil/Canada/4/</item>
+        <item>/nArgentina/Argentina/Mexico/Greece/Colombia/1/</item>
+        <item>/nChina/Korea/China/Russia/Cuba/2/</item>
+        <item>/nJapan/Australia/India/Japan/China/3/</item>
+        <item>/nGermany/France/Brazil/Canada/Germany/4/</item>
         <item>/nItaly/Italy/France/Czech/Russia/1/</item>
         <item>/nFrance/Czech/France/Italy/Germany/2/</item>
         <item>/nUnitedKingdom/Ireland/France/United Kingdom/Germany/3/</item>
@@ -41,5 +41,75 @@
         <item>/nRepublicofBelarus/Rusia/Belarus/Ukraine/Georgia/2/</item>
         <item>/nGeorgia/Cyprus/Mongolia/Georgia/Russia/3/</item>
         <item>/nNetherlands/Finland/Sweden/Germany/Netherlands/4/</item>
+        <item>/nSwitzerland/Switzerland/Denmark/Malta/Ireland/1/</item>
+        <item>/nIndonesia/India/Indonesia/Libya/Vietnam/2/</item>
+        <item>/nLatvia/Lithuania/Estonia/Latvia/Russia/3/</item>
+        <item>/nLithuania/Poland/Latvia/Estonia/Lithuania/4/</item>
+        <item>/nEstonia/Estonia/Finland/Lithuania/Netherlands/1/</item>
+        <item>/nBelgium/Finland/Belgium/Norway/Iceland/2/</item>
+        <item>/nLibya/Morocco/Lebannon/Libya/Syria/3/</item>
+        <item>/nLebannon/Libya/Vietnam/Iraq/Lebannon/4/</item>
+        <item>/nMorocco/Morocco/Tunisia/Libya/Ethiopia/1/</item>
+        <item>/nUnited Arab Emirates/Libya/United Arab Emirates/Egypt/South Africa/2/</item>
+        <item>/nSouth Africa/Zimbabwe/Iran/South Africa/Pakistan/3/</item>
+        <item>/nColombia/Peru/Bolivia/Venezuela/Colombia/4/</item>
+        <item>/nMexico/Mexico/Colombia/Brazil/Venezuela/1/</item>
+        <item>/nPanama/Peru/Panama/Bolivia/Ecuador/2/</item>
+        <item>/nVenezuela/Argentina/Peru/Venezuela/Ecuador/3/</item>
+        <item>/nCuba/Costa Rica/Nicaragua/Honduras/Cuba/4/</item>
+        <item>/nNicaragua/Nicaragua/Cuba/Argentina/Uruguay/1/</item>
+        <item>/nUruguay/Haiti/Uruguay/Brazil/Nicaragua/2/</item>
+        <item>/nParaguay/Uruguay/Peru/Paraguay/Chile/3/</item>
+        <item>/nThailand/Malaysia/South Korea/Vietnam/Thailand/4/</item>
+        <item>/nVietnam/Vietnam/Lebannon/Libya/Cambodia/1/</item>
+        <item>/nCambodia/Vietnam/Cambodia/South Korea/North Korea/2/</item>
+        <item>/nPakistan/Syria/Iraq/Pakistan/Turkey/3/</item>
+        <item>/nHungary/Romania/Slovenia/CzechRepublic/Hungary/4/</item>
+        <item>/nSlovenia/Slovenia/CzechRepublic/Serbia/Slovakia/1/</item>
+        <item>/nSerbia/Bulgaria/Serbia/Romania/Ukraine/2/</item>
+        <item>/nKazakhstan/Armenia/Turkmenistan/Kazakhstan/Mongolia/3/</item>
+        <item>/nArmenia/Georgia/Turkey/Moldova/Armenia/4/</item>
+        <item>/nCroatia/Croatia/Serbia/Albania/Bulgaria/1/</item>
+        <item>/nEcuador/Peru/Ecuador/Bolivia/Venezuela/2/</item>
+        <item>/nAustria/Albania/Belgium/Austria/Norway/3/</item>
+        <item>/nAzerbaijan/Armenia/Georgia/Russia/Azerbaijan/4/</item>
+        <item>/nAlbania/Albania/Montenegro/Serbia/Russia/1/</item>
+        <item>/nAlgeria/Libya/Algeria/South Africa/Ethiopia/2/</item>
+        <item>/nAngola/Vietnam/Lebannon/Angola/Iraq/3/</item>
+        <item>/nAfghanistan/Syria/Iraq/Iran/Afghanistan/4/</item>
+        <item>/nBangladesh/Bangladesh/Saudi Arabia/Nepal/Libya/1/</item>
+        <item>/nBurkina Faso/Saudi Arabia/Burkina Faso/Ethiopia/Afghanistan/2/</item>
+        <item>/nHaiti/Venezuela/Cuba/Haiti/Nicaragua/3/</item>
+        <item>/nGuatemala/Nicaragua/Venezuela/Haiti/Guatemala/4/</item>
+        <item>/nHonduras/Honduras/Ecuador/Bolivia/Venezuela/1/</item>
+        <item>/nDenmark/Sweden/Denmark/Finland/Norway/2/</item>
+        <item>/nZimbabwe/Burkina Faso/Indonesia/Zimbabwe/Maldives/3/</item>
+        <item>/nIsrael/Turkey/Pakistan/Egypt/Israel/4/</item>
+        <item>/nJordan/Jordan/Saudi Arabia/Ethiopia/Qatar/1/</item>
+        <item>/nIreland/Italy/Ireland/England/France/2/</item>
+        <item>/nIceland/Portugal/Austria/Iceland/Italy/3/</item>
+        <item>/nCameroon/Nepal/Qatar/Kenya/Cameroon/4/</item>
+        <item>/nQatar/Qatar/Cambodia/Kenya/Kuwait/1/</item>
+        <item>/nKenya/Pakistan/Kenya/Nepal/India/2/</item>
+        <item>/nCosta Rica/Madagascar/Cuba/Costa Rica/Panama/3/</item>
+        <item>/nMadagascar/Honduras/Cambodia/Nepal/Madagascar/4/</item>
+        <item>/nMaldives/Maldives/Cyprus/Costa Rica/Cuba/1/</item>
+        <item>/nMalta/Malaysia/Malta/Cambodia/Cyprus/2/</item>
+        <item>/nNepal/Madagascar/Honduras/Nepal/Qatar/3/</item>
+        <item>/nEl Salvador/Costa Rica/Chile/Haiti/El Salvador/4/</item>
+        <item>/nSaudi Arabia/Saudi Arabia/Qatar/United Arab Emirates/Kuwait/1/</item>
+        <item>/nTunisia/Morocco/Tunisia/Angola/Algeria/2/</item>
+        <item>/nMontenegro/Serbia/Croatia/Montenegro/Poland/3/</item>
+        <item>/nSri Lanka/Vietnam/Lebannon/South Korea/Sri Lanka/4/</item>
+        <item>/nEthiopia/Ethiopia/Jamaica/South Africa/Cameroon/1/</item>
+        <item>/nJamaica/Cuba/Jamaica/Haiti/Panama/2/</item>
+        <item>/nKyrgyzstan/Georgia/Kazakhstan/Kyrgyzstan/Tajikstan/3/</item>
+        <item>/nKuwait/Angola/Saudi Arabia/Qatar/Kuwait/4/</item>
+        <item>/nMoldova/Moldova/Ukraine/Romania/Germany/1/</item>
+        <item>/nNorway/Finland/Norway/Sweden/Switzerland/2/</item>
+        <item>/nSingapore/Malaysia/South Korea/Singapore/China/3/</item>
+        <item>/nTajikstan/Turkey/Nepal/Mongolia/Tajikstan/4/</item>
+        <item>/nTurkmenistan/Turkmenistan/Kazakhstan/Azerbaijan/China/1/</item>
+        <item>/nPhilippines/Madagascar/Philippines/Honduras/South Korea/2/</item>
     </array>
 </resources>
