@@ -15,4 +15,14 @@
     <string name="Easy">Easy</string>
     <string name="Medium">Medium</string>
     <string name="Hard">Hard</string>
+    <string name="rateButton">Best Players</string>
+    <string name="okButton">OK</string>
+    <string name="cancelButton">Cancel</string>
+    <string name="dialogTitle">Excellent</string>
+    <string name="dialogMessage">Enter the name to save result</string>
+    <string name="bestPlayers">Best players</string>
+    <string name="gameLevel">Game level </string>
+    <string name="result">Scores </string>
+    <string name="right">Правильно</string>
+    <string name="wrong">Неправильно</string>
 </resources>

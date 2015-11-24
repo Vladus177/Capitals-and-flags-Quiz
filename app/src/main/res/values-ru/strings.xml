@@ -15,4 +15,14 @@
     <string name="Easy">Тренировка</string>
     <string name="Medium">Средний</string>
     <string name="Hard">Тяжелый</string>
+    <string name="rateButton">Рейтинг</string>
+    <string name="okButton">ОК</string>
+    <string name="cancelButton">Отмена</string>
+    <string name="dialogTitle">Отличный результат</string>
+    <string name="dialogMessage">Введите имя для записи в рейтинг</string>
+    <string name="bestPlayers">Лучшие игроки</string>
+    <string name="gameLevel">Уровень </string>
+    <string name="result">Очки </string>
+    <string name="right">Правильно</string>
+    <string name="wrong">Неправильно</string>
 </resources>

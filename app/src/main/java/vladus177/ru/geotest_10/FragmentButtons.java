@@ -16,6 +16,7 @@ public class FragmentButtons extends Fragment {
     // buttons for main
     Button capitalsButton;
     Button flagsButton;
+    Button rateButton;
 
 
     @Override
@@ -25,6 +26,7 @@ public class FragmentButtons extends Fragment {
         //find them all
         capitalsButton = (Button)buttonsView.findViewById(R.id.capitalsButton);
         flagsButton = (Button)buttonsView.findViewById(R.id.flagsButon);
+        rateButton = (Button)buttonsView.findViewById(R.id.rateButton);
 
         capitalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +38,12 @@ public class FragmentButtons extends Fragment {
             @Override
             public void onClick(View v) {
                 ((MainActivity)getActivity()).addFragmentFlags();
+            }
+        });
+        rateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity)getActivity()).addFragmentRates();
             }
         });
 

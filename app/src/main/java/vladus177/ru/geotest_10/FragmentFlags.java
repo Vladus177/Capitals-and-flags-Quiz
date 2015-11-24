@@ -1,15 +1,23 @@
 package vladus177.ru.geotest_10;
 
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.Editable;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -45,8 +53,13 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
-    String strtext;
-    String answer;
+    private String strtext;
+    private String answer;
+    public String name;
+    private DataBaseHelper dataBaseHelper;
+    private SQLiteDatabase SQLwriter;
+    Context context;
+    AlertDialog.Builder ad;
 
     // Image Array
     int[] drawables = {
@@ -169,6 +182,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     int totalTime = QUESTIONS;
     int current_right = 0;
     int questionCounter = 0;
+    int score = 0;
 
 
     @Override
@@ -194,6 +208,8 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         buttons[2] = button3;
         buttons[3] = button4;
         strtext = ((MainActivity) getActivity()).getLevel();
+        context = getActivity();
+        dataBaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
 
         numGenerator(numbers);
         LoadQuestions();
@@ -252,8 +268,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
 
     //stats
     private void Stats() {
-        if (strtext.equals("easy"))
-        {
+        if (strtext.equals("easy")) {
             double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
             String stat = "";
             stat += getString(R.string.note1);
@@ -263,9 +278,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
             stat += getString(R.string.note3);
             stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
             Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
-        }
-        else
-        {
+        } else if (strtext.equals("medium")) {
             double rating = right;
             String stat = "";
             stat += getString(R.string.note1);
@@ -275,10 +288,21 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
             stat += getString(R.string.note3);
             stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
             Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
+        } else {
+            double rating = right;
+            String stat = "";
+            stat += getString(R.string.note1);
+            stat += " " + (right * 2) + " ";
+            stat += getString(R.string.note2);
+            stat += " " + totalTime + ". ";
+            stat += getString(R.string.note3);
+            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+            Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
         }
     }
+
     public void showToastRight(View view) {
-        Toast toast = Toast.makeText(getActivity(), "TRUE", Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(getActivity(), getString(R.string.right), Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.BOTTOM, 0, 0);
         LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView rightImageView = new ImageView(getActivity());
@@ -297,6 +321,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         toastContainer.addView(rightImageView, 0);
         toast.show();
     }
+
     //Toast game over
     public void showToastGameOver(View view) {
         Toast toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
@@ -313,9 +338,9 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         switch (strtext) {
             case "easy":
                 totalTime = QUESTIONS;
-                Counter.setText(getString(R.string.note5)+ " "+ questionCounter
-                        + " " +getString(R.string.note4) + " " + totalTime
-                        + " " + getString(R.string.note6) );
+                Counter.setText(getString(R.string.note5) + " " + questionCounter
+                        + " " + getString(R.string.note4) + " " + totalTime
+                        + " " + getString(R.string.note6));
                 wrong++;
                 for (int i = 0; i < VARIANTS; i++) {
                     if (v == buttons[i]) {
@@ -343,10 +368,10 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                 }
                 break;
             case "medium":
-                totalTime = 70;
-                Counter.setText(getString(R.string.note5)+ " "+ questionCounter
-                        + " " +getString(R.string.note4) + " " + totalTime
-                        + " " + getString(R.string.note6) );
+                totalTime = QUESTIONS;
+                Counter.setText(getString(R.string.note5) + " " + questionCounter
+                        + " " + getString(R.string.note4) + " " + totalTime
+                        + " " + getString(R.string.note6));
                 wrong++;
                 for (int i = 0; i < VARIANTS; i++) {
                     if (v == buttons[i]) {
@@ -366,15 +391,23 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                     LoadQuestion(numbers.get(time));
                 }
                 if (time == totalTime) {
+                    score = right;
                     Stats();
+                    if (right > 10) {
+                        Dialog();
+                    }
                     time = 0;
                     right = 0;
                     wrong = 0;
                     numGenerator(numbers);
                 }
-                if (wrong > 3) {
+                if (wrong > 5) {
                     showToastGameOver(this.layout);
+                    score = right;
                     Stats();
+                    if (right > 10) {
+                        Dialog();
+                    }
                     time = 0;
                     right = 0;
                     wrong = 0;
@@ -384,9 +417,9 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                 break;
             case "hard":
                 totalTime = QUESTIONS;
-                Counter.setText(getString(R.string.note5)+ " "+ questionCounter
-                        + " " +getString(R.string.note4) + " " + totalTime
-                        + " " + getString(R.string.note6) );
+                Counter.setText(getString(R.string.note5) + " " + questionCounter
+                        + " " + getString(R.string.note4) + " " + totalTime
+                        + " " + getString(R.string.note6));
                 wrong++;
                 for (int i = 0; i < VARIANTS; i++) {
                     if (v == buttons[i]) {
@@ -406,15 +439,23 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                     LoadQuestion(numbers.get(time));
                 }
                 if (time == totalTime) {
+                    score = right * 2;
                     Stats();
+                    if (right > 10) {
+                        Dialog();
+                    }
                     time = 0;
                     right = 0;
                     wrong = 0;
                     numGenerator(numbers);
                 }
-                if (wrong > 5) {
+                if (wrong > 3) {
                     showToastGameOver(this.layout);
+                    score = right * 2;
                     Stats();
+                    if (right > 10) {
+                        Dialog();
+                    }
                     time = 0;
                     right = 0;
                     wrong = 0;
@@ -425,6 +466,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         }
 
     }
+
     //creating Array of no repeating randomly generated numbers
     private ArrayList numGenerator(ArrayList<Integer> numbersForQuestions) {
         Random rand = new Random();
@@ -440,9 +482,49 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         return numbersForQuestions;
 
     }
+
     //closing the fragment
-    private void closeFragment()
-    {
+    private void closeFragment() {
         getActivity().getFragmentManager().beginTransaction().remove(this).commit();
     }
+
+    public void SQLwrite(String name, String strtext, int score) {
+        SQLwriter = dataBaseHelper.getWritableDatabase();
+        ContentValues newValues = new ContentValues();
+        newValues.put(DataBaseHelper.PLAYER_NAME, name);
+        newValues.put(DataBaseHelper.GAME_MODE, strtext);
+        newValues.put(DataBaseHelper.PLAYER_SCORES, score);
+        Log.d("myLogs", "Игрок записан" + name + " уровень " + strtext + " " + score);
+        SQLwriter.insert("scores", null, newValues);
+        SQLwriter.close();
+    }
+
+    public void Dialog() {
+        ad = new AlertDialog.Builder(context);
+        String title = getString(R.string.dialogTitle);
+        String message = getString(R.string.dialogMessage);
+        final EditText input = new EditText(this.getActivity());
+        ad.setView(input);
+        ad.setTitle(title);
+        ad.setMessage(message);
+        ad.setPositiveButton(getString(R.string.okButton), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                Editable value = input.getText();
+                name = value.toString();
+                SQLwrite(name, strtext, score);
+
+
+            }
+        });
+
+        ad.setNegativeButton(getString(R.string.cancelButton), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                return;
+            }
+        });
+
+        ad.show();
+    }
+
 }
