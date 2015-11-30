@@ -5,18 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/containerButtons"
-        tools:layout="@layout/buttons_fragment"
-        android:background="@color/Azul">
-    </FrameLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/containerButtons"
         android:id="@+id/linearLayout">
 
         <RadioGroup
@@ -57,36 +49,27 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/containerRating"
         android:id="@+id/main_for_faragments"
         android:baselineAligned="false"
         android:layout_below="@+id/linearLayout">
 
         <FrameLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/container"
+            android:id="@+id/container2"
 
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_marginRight="3dp"></FrameLayout>
 
         <FrameLayout
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/container2"
+            android:id="@+id/container"
 
             android:layout_weight="1"
             android:layout_marginLeft="3dp"></FrameLayout>
     </LinearLayout>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:id="@+id/containerRating"
-        tools:layout="@layout/buttons_fragment"
-        android:background="@color/Azul"
-        android:layout_alignParentBottom="true">
-    </FrameLayout>
 
 </RelativeLayout>

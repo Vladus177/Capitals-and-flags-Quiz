@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "vladus177.ru.geotest_10"
-        minSdkVersion 14
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"

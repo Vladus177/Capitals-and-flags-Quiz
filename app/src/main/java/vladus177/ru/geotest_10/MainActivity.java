@@ -7,11 +7,17 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Chronometer;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class MainActivity extends Activity {
@@ -25,31 +31,27 @@ public class MainActivity extends Activity {
     FragmentTransaction fTrans;
     FrameLayout container;
     FrameLayout container2;
-    FrameLayout containerRating;
     FrameLayout containerButtons;
     FragmentManager myFragmentManager;
     RadioGroup radioGroup;
     RadioButton radioButtonEasy;
     RadioButton radioButtonMedium;
     RadioButton radioButtonHard;
+    TextView timerText;
     public String game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //fragF = new FragmentFlags();
-        //fragC = new FragmentCapitals();
-        //fragButtons = new FragmentButtons();
-        //ratesFragment = new RatesFragment();
         container = (FrameLayout) findViewById(R.id.container);
         container2 = (FrameLayout) findViewById(R.id.container2);
         containerButtons = (FrameLayout) findViewById(R.id.containerButtons);
-        containerRating = (FrameLayout) findViewById(R.id.containerRating);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         radioButtonEasy = (RadioButton) findViewById(R.id.radioButtonEasy);
         radioButtonMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
         radioButtonHard = (RadioButton) findViewById(R.id.radioButtonHard);
+        //timerText = (TextView)findViewById(R.id.timerText);
         myFragmentManager = getFragmentManager();
         game = "medium";
         SQLstart();
@@ -78,9 +80,9 @@ public class MainActivity extends Activity {
 
             }
         });
-        addFragmentButtons();
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -107,52 +109,42 @@ public class MainActivity extends Activity {
 
     public void addFragmentFlags() {
         fTrans = myFragmentManager.beginTransaction();
-        Configuration config = getResources().getConfiguration();
-        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragF = new FragmentFlags();
             fTrans.replace(R.id.container, fragF);
             fTrans.commit();
-        } else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            fragF = new FragmentFlags();
-            fTrans.replace(R.id.container2, new FragmentFlags());
-            fTrans.commit();
-        }
+
     }
 
     public void addFragmentCapitals() {
         fTrans = myFragmentManager.beginTransaction();
-        Configuration config = getResources().getConfiguration();
-        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragC = new FragmentCapitals();
             fTrans.replace(R.id.container, fragC);
             fTrans.commit();
-        } else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            fragC = new FragmentCapitals();
-            fTrans.replace(R.id.container, new FragmentCapitals());
-            fTrans.commit();
-        }
 
     }
 
     public void addFragmentButtons() {
         fTrans = myFragmentManager.beginTransaction();
-        fragButtons = new FragmentButtons();
-        fTrans.replace(R.id.containerButtons, fragButtons);
-        fTrans.commit();
+        Configuration config = getResources().getConfiguration();
+        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            fragButtons = new FragmentButtons();
+            fTrans.replace(R.id.containerButtons, fragButtons);
+            fTrans.commit();
+        }
+        else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE)
+        {
+            fragButtons = new FragmentButtons();
+            fTrans.replace(R.id.container2, fragButtons);
+            fTrans.commit();
+        }
     }
 
     public void addFragmentRates() {
         fTrans = myFragmentManager.beginTransaction();
-        Configuration config = getResources().getConfiguration();
-        if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
             ratesFragment = new RatesFragment();
             fTrans.replace(R.id.container, new RatesFragment());
             fTrans.commit();
-        } else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            ratesFragment = new RatesFragment();
-            fTrans.replace(R.id.containerRating, new RatesFragment());
-            fTrans.commit();
-        }
+
     }
 
     public String getLevel() {
@@ -162,9 +154,11 @@ public class MainActivity extends Activity {
     public void restartFragment() {
         Fragment fragment = getFragmentManager().findFragmentById(R.id.container);
         if (fragment instanceof FragmentCapitals) {
-            fragment.getFragmentManager().beginTransaction().remove(this.fragC).commit();
+            fragment.getFragmentManager().beginTransaction().replace
+                    (R.id.container,new FragmentCapitals()).commit();
         } else if (fragment instanceof FragmentFlags) {
-            fragment.getFragmentManager().beginTransaction().remove(this.fragF).commit();
+            fragment.getFragmentManager().beginTransaction().replace
+                    (R.id.container, new FragmentFlags()).commit();
         }
     }
 

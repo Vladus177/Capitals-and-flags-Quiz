@@ -1,6 +1,5 @@
 package vladus177.ru.geotest_10;
 
-import android.animation.AnimatorSet;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.ContentValues;
@@ -9,10 +8,8 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.util.Log;
 import android.view.Gravity;
@@ -23,15 +20,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by Владислав on 05.11.2015.
@@ -64,6 +57,11 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
     private SQLiteDatabase SQLwriter;
     Context context;
     AlertDialog.Builder ad;
+    private CountDownTimer countDownTimer;
+    private boolean timerStarted = false;
+    private final long startTime = 12 * 1000;
+    private final long interval = 1 * 1000;
+
 
     //counts
     int wrong = 0;
@@ -99,13 +97,17 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
         strtext = ((MainActivity) getActivity()).getLevel();
         context = getActivity();
         dataBaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
-
+        //countDownTimer = new CountDownTimerActivity(startTime, interval);
+        //timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
+        //countDownTimer.start();
+        //timerStarted = true;
         //action
         numGenerator(numbers);
         LoadQuestions();
         LoadQuestion(numbers.get(time));
         return fragment2View;
     }
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -423,5 +425,20 @@ public class FragmentCapitals extends Fragment implements View.OnClickListener {
 
         ad.show();
     }
+    public class CountDownTimerActivity extends CountDownTimer {
+        public CountDownTimerActivity(long startTime, long interval) {
+            super(startTime, interval);
+        }
 
+        @Override
+        public void onFinish() {
+            timerText.setText("--");
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            timerText.setText("" + millisUntilFinished/1000);
+            (MainActivity)getActivity().
+        }
+    }
 }

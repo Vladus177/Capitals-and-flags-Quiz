@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class RatesFragment extends Fragment {
         View fragment3Rates = inflater.inflate(R.layout.activity_rates,
                 container, false);
         orderBy = "playerScores DESC";
+        Button deleteAll = (Button) fragment3Rates.findViewById(R.id.buttonDeleteAll);
         mDatabaseHelper = new DataBaseHelper(getActivity(), "mydatabase.db", null, 1);
         mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
         SQLread();
@@ -48,6 +50,17 @@ public class RatesFragment extends Fragment {
             item.getLayoutParams().width = LinearLayout.LayoutParams.MATCH_PARENT;
             linLayout.addView(item);
         }
+        deleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(LOG_TAG, "--- Delete from mytabe: ---");
+                // удаляем по id
+                int delCount = mSqLiteDatabase.delete("scores", null, null);
+                Log.d(LOG_TAG, "deleted rows count = " + delCount);
+                mSqLiteDatabase.close();
+                closeFragment();
+            }
+        });
 
 
         return fragment3Rates;
@@ -76,7 +89,9 @@ public class RatesFragment extends Fragment {
 
         }
         cursor.close();
-        mSqLiteDatabase.close();
-    }
 
+    }
+    private void closeFragment() {
+        getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+    }
 }

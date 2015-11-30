@@ -12,6 +12,12 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/textview">
     </TextView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Очистить"
+        android:id="@+id/buttonDeleteAll"
+        android:layout_gravity="bottom" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,4 +29,5 @@
             android:orientation="vertical">
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
