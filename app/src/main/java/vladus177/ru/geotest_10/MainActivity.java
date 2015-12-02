@@ -7,7 +7,6 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Chronometer;
@@ -31,13 +30,9 @@ public class MainActivity extends Activity {
     FragmentTransaction fTrans;
     FrameLayout container;
     FrameLayout container2;
+    FrameLayout containerRating;
     FrameLayout containerButtons;
     FragmentManager myFragmentManager;
-    RadioGroup radioGroup;
-    RadioButton radioButtonEasy;
-    RadioButton radioButtonMedium;
-    RadioButton radioButtonHard;
-    TextView timerText;
     public String game;
 
     @Override
@@ -47,39 +42,11 @@ public class MainActivity extends Activity {
         container = (FrameLayout) findViewById(R.id.container);
         container2 = (FrameLayout) findViewById(R.id.container2);
         containerButtons = (FrameLayout) findViewById(R.id.containerButtons);
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        radioButtonEasy = (RadioButton) findViewById(R.id.radioButtonEasy);
-        radioButtonMedium = (RadioButton) findViewById(R.id.radioButtonMedium);
-        radioButtonHard = (RadioButton) findViewById(R.id.radioButtonHard);
-        //timerText = (TextView)findViewById(R.id.timerText);
         myFragmentManager = getFragmentManager();
         game = "medium";
         SQLstart();
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+        addFragmentButtons();
 
-                switch (checkedId) {
-                    case R.id.radioButtonEasy:
-                        game = "easy";
-                        restartFragment();
-                        break;
-                    case R.id.radioButtonMedium:
-                        game = "medium";
-                        restartFragment();
-                        break;
-                    case R.id.radioButtonHard:
-                        game = "hard";
-                        restartFragment();
-                        break;
-                    default:
-                        game = "medium";
-                        break;
-                }
-
-
-            }
-        });
 
     }
 
@@ -107,19 +74,18 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void addFragmentFlags() {
         fTrans = myFragmentManager.beginTransaction();
-            fragF = new FragmentFlags();
-            fTrans.replace(R.id.container, fragF);
-            fTrans.commit();
+        fragF = new FragmentFlags();
+        fTrans.replace(R.id.container, fragF).commit();
 
     }
 
     public void addFragmentCapitals() {
         fTrans = myFragmentManager.beginTransaction();
-            fragC = new FragmentCapitals();
-            fTrans.replace(R.id.container, fragC);
-            fTrans.commit();
+        fragC = new FragmentCapitals();
+        fTrans.replace(R.id.container, fragC).commit();
 
     }
 
@@ -128,37 +94,30 @@ public class MainActivity extends Activity {
         Configuration config = getResources().getConfiguration();
         if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragButtons = new FragmentButtons();
-            fTrans.replace(R.id.containerButtons, fragButtons);
-            fTrans.commit();
-        }
-        else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE)
-        {
+            fTrans.replace(R.id.containerButtons, fragButtons).commit();
+        } else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             fragButtons = new FragmentButtons();
-            fTrans.replace(R.id.container2, fragButtons);
-            fTrans.commit();
+            fTrans.replace(R.id.container2, fragButtons).commit();
         }
     }
 
     public void addFragmentRates() {
         fTrans = myFragmentManager.beginTransaction();
-            ratesFragment = new RatesFragment();
-            fTrans.replace(R.id.container, new RatesFragment());
-            fTrans.commit();
+        ratesFragment = new RatesFragment();
+        fTrans.replace(R.id.container, ratesFragment);
+        fTrans.commit();
 
     }
 
-    public String getLevel() {
-        return game;
+    public void closeFragmentCapitals() {
+        if (fragC != null) {
+            fragC.getFragmentManager().beginTransaction().remove(fragC).commit();
+        }
     }
 
-    public void restartFragment() {
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.container);
-        if (fragment instanceof FragmentCapitals) {
-            fragment.getFragmentManager().beginTransaction().replace
-                    (R.id.container,new FragmentCapitals()).commit();
-        } else if (fragment instanceof FragmentFlags) {
-            fragment.getFragmentManager().beginTransaction().replace
-                    (R.id.container, new FragmentFlags()).commit();
+    public void closeFragmentFlags() {
+        if (fragF != null) {
+            fragF.getFragmentManager().beginTransaction().remove(fragC).commit();
         }
     }
 
@@ -168,6 +127,5 @@ public class MainActivity extends Activity {
         sdb = mDatabaseHelper.getReadableDatabase();
 
     }
-
 
 }

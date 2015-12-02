@@ -5,45 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout">
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:id="@+id/radioGroup">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Easy"
-                android:id="@+id/radioButtonEasy"
-                android:checked="false"
-                android:layout_weight="1" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Medium"
-                android:id="@+id/radioButtonMedium"
-                android:checked="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Hard"
-                android:id="@+id/radioButtonHard"
-                android:checked="false"
-                android:layout_gravity="right"
-                android:layout_weight="1" />
-        </RadioGroup>
-    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -51,7 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/main_for_faragments"
         android:baselineAligned="false"
-        android:layout_below="@+id/linearLayout">
+        >
 
         <FrameLayout
             android:orientation="horizontal"

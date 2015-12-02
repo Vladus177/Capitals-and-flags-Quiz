@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,6 +21,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,10 +41,11 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     Button button3;
     Button button4;
     TextView Question;
-    RelativeLayout layout;
+    RelativeLayout layout2;
     ImageView imageView;
     TextView Counter;
-
+    TextView timerText;
+    TextView textViewLevel;
 
     //answer arrays and constants
     private static final int VARIANTS = 4;
@@ -60,6 +64,11 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     private SQLiteDatabase SQLwriter;
     Context context;
     AlertDialog.Builder ad;
+    AlertDialog.Builder fad;
+    private CountDownTimer countDownTimer;
+    private boolean timerStarted = false;
+    private final long startTime = 11 * 1000;
+    private final long interval = 1 * 1000;
 
     // Image Array
     int[] drawables = {
@@ -200,20 +209,22 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
         button4.setOnClickListener(this);
+        timerText = (TextView) fragment1View.findViewById(R.id.timerText);
         imageView = (ImageView) fragment1View.findViewById(R.id.imageView);
         Question = (TextView) fragment1View.findViewById(R.id.Question);
         Counter = (TextView) fragment1View.findViewById(R.id.Counter);
+        textViewLevel = (TextView) fragment1View.findViewById(R.id.textViewLevel);
         buttons[0] = button1;
         buttons[1] = button2;
         buttons[2] = button3;
         buttons[3] = button4;
-        strtext = ((MainActivity) getActivity()).getLevel();
         context = getActivity();
         dataBaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
-
+        countDownTimer = new CountDownTimerActivity(startTime, interval);
+        //action
         numGenerator(numbers);
         LoadQuestions();
-        LoadQuestion(numbers.get(time));
+        firstDialog();
         return fragment1View;
     }
 
@@ -254,8 +265,9 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
 
     //Load Next Question
     private void LoadQuestion(int time) {
-
-        //Question.setText(quest[time]);
+        Counter.setText(getString(R.string.note5) + " " + questionCounter
+                + " " + getString(R.string.note4) + " " + totalTime
+                + " " + getString(R.string.note6));
         questionCounter++;
         for (int i = 0; i < VARIANTS; i++) {
             buttons[i].setText(answerMatrix[i][time]);
@@ -268,7 +280,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
 
     //stats
     private void Stats() {
-        if (strtext.equals("easy")) {
+        if (strtext.equals("Easy")) {
             double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
             String stat = "";
             stat += getString(R.string.note1);
@@ -278,7 +290,7 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
             stat += getString(R.string.note3);
             stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
             Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG).show();
-        } else if (strtext.equals("medium")) {
+        } else if (strtext.equals("Medium")) {
             double rating = right;
             String stat = "";
             stat += getString(R.string.note1);
@@ -326,83 +338,60 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
     public void showToastGameOver(View view) {
         Toast toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
         toast.setGravity(Gravity.CENTER, 0, 0);
-        //LinearLayout toastContainer = (LinearLayout) toast.getView();
-        //ImageView rightImageView = new ImageView(getActivity());
-        //rightImageView.setImageResource(R.drawable.wrong);
-        //toastContainer.addView(rightImageView, 0);
         toast.show();
     }
 
     @Override //Click
     public void onClick(View v) {
         switch (strtext) {
-            case "easy":
+            case "Easy":
                 totalTime = QUESTIONS;
-                Counter.setText(getString(R.string.note5) + " " + questionCounter
-                        + " " + getString(R.string.note4) + " " + totalTime
-                        + " " + getString(R.string.note6));
                 wrong++;
                 for (int i = 0; i < VARIANTS; i++) {
                     if (v == buttons[i]) {
                         if (current_right == i) {
                             wrong--;
                             right++;
-                            showToastRight(this.layout);
+                            showToastRight(this.layout2);
                         } else {
-                            showToastWrong(this.layout);
+                            showToastWrong(this.layout2);
                         }
 
                     }
                 }
 
                 time++;
-                if (time < numbers.size()) {
-                    LoadQuestion(numbers.get(time));
-                }
                 if (time == totalTime) {
                     Stats();
                     time = 0;
                     right = 0;
                     wrong = 0;
+                    questionCounter = 1;
                     numGenerator(numbers);
+                }
+                if (time < numbers.size()) {
+                    LoadQuestion(numbers.get(time));
                 }
                 break;
-            case "medium":
+            case "Medium":
                 totalTime = QUESTIONS;
-                Counter.setText(getString(R.string.note5) + " " + questionCounter
-                        + " " + getString(R.string.note4) + " " + totalTime
-                        + " " + getString(R.string.note6));
                 wrong++;
                 for (int i = 0; i < VARIANTS; i++) {
                     if (v == buttons[i]) {
                         if (current_right == i) {
                             wrong--;
                             right++;
-                            showToastRight(this.layout);
+                            showToastRight(this.layout2);
                         } else {
-                            showToastWrong(this.layout);
+                            showToastWrong(this.layout2);
                         }
 
                     }
                 }
 
                 time++;
-                if (time < numbers.size()) {
-                    LoadQuestion(numbers.get(time));
-                }
-                if (time == totalTime) {
-                    score = right;
-                    Stats();
-                    if (right > 10) {
-                        Dialog();
-                    }
-                    time = 0;
-                    right = 0;
-                    wrong = 0;
-                    numGenerator(numbers);
-                }
                 if (wrong > 5) {
-                    showToastGameOver(this.layout);
+                    showToastGameOver(this.layout2);
                     score = right;
                     Stats();
                     if (right > 10) {
@@ -413,33 +402,8 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                     wrong = 0;
                     closeFragment();
 
-                }
-                break;
-            case "hard":
-                totalTime = QUESTIONS;
-                Counter.setText(getString(R.string.note5) + " " + questionCounter
-                        + " " + getString(R.string.note4) + " " + totalTime
-                        + " " + getString(R.string.note6));
-                wrong++;
-                for (int i = 0; i < VARIANTS; i++) {
-                    if (v == buttons[i]) {
-                        if (current_right == i) {
-                            wrong--;
-                            right++;
-                            showToastRight(this.layout);
-                        } else {
-                            showToastWrong(this.layout);
-                        }
-
-                    }
-                }
-
-                time++;
-                if (time < numbers.size()) {
-                    LoadQuestion(numbers.get(time));
-                }
-                if (time == totalTime) {
-                    score = right * 2;
+                } else if (time == totalTime) {
+                    score = right;
                     Stats();
                     if (right > 10) {
                         Dialog();
@@ -447,10 +411,30 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                     time = 0;
                     right = 0;
                     wrong = 0;
-                    numGenerator(numbers);
+                    closeFragment();
+                } else if (time < numbers.size()) {
+                    LoadQuestion(numbers.get(time));
                 }
+                break;
+            case "Hard":
+                totalTime = QUESTIONS;
+                wrong++;
+                for (int i = 0; i < VARIANTS; i++) {
+                    if (v == buttons[i]) {
+                        if (current_right == i) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout2);
+                        } else {
+                            showToastWrong(this.layout2);
+                        }
+
+                    }
+                }
+
+                time++;
                 if (wrong > 3) {
-                    showToastGameOver(this.layout);
+                    showToastGameOver(this.layout2);
                     score = right * 2;
                     Stats();
                     if (right > 10) {
@@ -460,6 +444,20 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
                     right = 0;
                     wrong = 0;
                     closeFragment();
+                } else if (time == totalTime) {
+                    score = right * 2;
+                    Stats();
+                    if (right > 10) {
+                        Dialog();
+                    }
+                    time = 0;
+                    right = 0;
+                    wrong = 0;
+                    closeFragment();
+                } else if (time < numbers.size()) {
+                    LoadQuestion(numbers.get(time));
+                    countDownTimer.start();
+                    timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
 
                 }
                 break;
@@ -527,4 +525,71 @@ public class FragmentFlags extends Fragment implements View.OnClickListener {
         ad.show();
     }
 
+    public void firstDialog() {
+        fad = new AlertDialog.Builder(context);
+        final String[] gameLevels = {"Easy", "Medium", "Hard"};
+        String title = "Выберите уровень сложности";
+        fad.setTitle(title);
+        fad.setItems(gameLevels, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+                // TODO Auto-generated method stub
+                strtext = gameLevels[item];
+                textViewLevel.setText(strtext);
+                LoadQuestion(numbers.get(time));
+                if (strtext.equals("Hard")) {
+                    countDownTimer.start();
+                    timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
+                }
+
+
+            }
+        });
+        fad.show();
+
+    }
+
+    public class CountDownTimerActivity extends CountDownTimer {
+        public CountDownTimerActivity(long startTime, long interval) {
+            super(startTime, interval);
+        }
+
+        @Override
+        public void onFinish() {
+            //timerText.setText("--");
+            wrong++;
+            showToastWrong(layout2);
+            time++;
+            if (wrong > 3) {
+                showToastGameOver(layout2);
+                score = right * 2;
+                Stats();
+                if (right > 10) {
+                    Dialog();
+                }
+                time = 0;
+                right = 0;
+                wrong = 0;
+                closeFragment();
+            } else if (time == totalTime) {
+                score = right * 2;
+                Stats();
+                if (right > 10) {
+                    Dialog();
+                }
+                time = 0;
+                right = 0;
+                wrong = 0;
+                closeFragment();
+            } else if (time < numbers.size()) {
+                LoadQuestion(numbers.get(time));
+                countDownTimer.start();
+            }
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+            timerText.setText("" + millisUntilFinished / 1000);
+        }
+    }
 }
