@@ -12,7 +12,7 @@ import android.widget.Switch;
 /**
  * Created by Владислав on 06.11.2015.
  */
-public class FragmentButtons extends Fragment {
+public class FragmentButtons extends android.support.v4.app.Fragment {
     // buttons for main
     Button capitalsButton;
     Button flagsButton;

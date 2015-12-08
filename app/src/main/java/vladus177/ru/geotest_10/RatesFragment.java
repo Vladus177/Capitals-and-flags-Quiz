@@ -17,7 +17,7 @@ import java.util.ArrayList;
 /**
  * Created by Владислав on 21.11.2015.
  */
-public class RatesFragment extends Fragment {
+public class RatesFragment extends android.support.v4.app.Fragment {
     final String LOG_TAG = "myLogs";
     public DataBaseHelper mDatabaseHelper;
     public SQLiteDatabase mSqLiteDatabase;
@@ -92,6 +92,6 @@ public class RatesFragment extends Fragment {
 
     }
     private void closeFragment() {
-        getActivity().getFragmentManager().beginTransaction().remove(this).commit();
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }

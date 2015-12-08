@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "vladus177.ru.geotest_10"
-        minSdkVersion 11
+        minSdkVersion 7
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
@@ -22,4 +22,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.1'
+    compile files('libs/android-support-v4.jar')
+
 }

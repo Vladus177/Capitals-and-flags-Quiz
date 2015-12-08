@@ -7,19 +7,15 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Chronometer;
 import android.widget.FrameLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 
-public class MainActivity extends Activity {
+
+
+public class MainActivity extends FragmentActivity {
     final String LOG_TAG = "myLogs";
     private DataBaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
@@ -27,12 +23,9 @@ public class MainActivity extends Activity {
     FragmentCapitals fragC;
     FragmentButtons fragButtons;
     RatesFragment ratesFragment;
-    FragmentTransaction fTrans;
     FrameLayout container;
     FrameLayout container2;
-    FrameLayout containerRating;
     FrameLayout containerButtons;
-    FragmentManager myFragmentManager;
     public String game;
 
     @Override
@@ -42,7 +35,6 @@ public class MainActivity extends Activity {
         container = (FrameLayout) findViewById(R.id.container);
         container2 = (FrameLayout) findViewById(R.id.container2);
         containerButtons = (FrameLayout) findViewById(R.id.containerButtons);
-        myFragmentManager = getFragmentManager();
         game = "medium";
         SQLstart();
         addFragmentButtons();
@@ -76,36 +68,35 @@ public class MainActivity extends Activity {
 
 
     public void addFragmentFlags() {
-        fTrans = myFragmentManager.beginTransaction();
         fragF = new FragmentFlags();
-        fTrans.replace(R.id.container, fragF).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragF).commit();
 
     }
 
     public void addFragmentCapitals() {
-        fTrans = myFragmentManager.beginTransaction();
         fragC = new FragmentCapitals();
-        fTrans.replace(R.id.container, fragC).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, fragC).commit();
 
     }
 
     public void addFragmentButtons() {
-        fTrans = myFragmentManager.beginTransaction();
+
         Configuration config = getResources().getConfiguration();
         if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragButtons = new FragmentButtons();
-            fTrans.replace(R.id.containerButtons, fragButtons).commit();
+            getSupportFragmentManager().beginTransaction().replace
+                    (R.id.containerButtons, fragButtons).commit();
         } else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             fragButtons = new FragmentButtons();
-            fTrans.replace(R.id.container2, fragButtons).commit();
+            getSupportFragmentManager().beginTransaction().replace
+                    (R.id.container2, fragButtons).commit();
         }
     }
 
     public void addFragmentRates() {
-        fTrans = myFragmentManager.beginTransaction();
         ratesFragment = new RatesFragment();
-        fTrans.replace(R.id.container, ratesFragment);
-        fTrans.commit();
+        getSupportFragmentManager().beginTransaction().replace
+                (R.id.container, ratesFragment).commit();
 
     }
 
