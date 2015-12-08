@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:viewportWidth="180"
+    android:viewportHeight="120"
+    android:width="400dp"
+    android:height="300dp">
+    <path
+        android:pathData="M0 0l180 0 0 120 -180 0z"
+        android:fillColor="#000000" />
+    <path
+        android:pathData="M0 0L180 0 180 80 0 80Z"
+        android:fillColor="#ffffff" />
+    <path
+        android:pathData="M0 0L180 0 180 40 0 40Z"
+        android:fillColor="#ce1126" />
+    <group
+        android:rotation="18"
+        android:translateX="17.16675"
+        android:translateY="-14.38657">
+        <path
+            android:pathData="M54 47l0 13 8 0"
+            android:fillColor="#007a3d" />
+    </group>
+    <group
+        android:scaleX="-1"
+        android:translateX="108">
+        <group
+            android:rotation="18"
+            android:translateX="17.16675"
+            android:translateY="-14.38657">
+            <path
+                android:pathData="M54 47l0 13 8 0"
+                android:fillColor="#007a3d" />
+        </group>
+    </group>
+    <group
+        android:rotation="72"
+        android:translateX="94.37647"
+        android:translateY="-9.898071">
+        <group
+            android:rotation="18"
+            android:translateX="17.16675"
+            android:translateY="-14.38657">
+            <path
+                android:pathData="M54 47l0 13 8 0"
+                android:fillColor="#007a3d" />
+        </group>
+        <group
+            android:scaleX="-1"
+            android:translateX="108">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+        </group>
+    </group>
+    <group
+        android:rotation="-72"
+        android:translateX="-19.75031"
+        android:translateY="92.81603">
+        <group
+            android:rotation="18"
+            android:translateX="17.16675"
+            android:translateY="-14.38657">
+            <path
+                android:pathData="M54 47l0 13 8 0"
+                android:fillColor="#007a3d" />
+        </group>
+        <group
+            android:scaleX="-1"
+            android:translateX="108">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+        </group>
+    </group>
+    <group
+        android:scaleX="-1"
+        android:scaleY="-1"
+        android:rotation="-36"
+        android:translateX="132.954"
+        android:translateY="76.80061">
+        <group
+            android:rotation="18"
+            android:translateX="17.16675"
+            android:translateY="-14.38657">
+            <path
+                android:pathData="M54 47l0 13 8 0"
+                android:fillColor="#007a3d" />
+        </group>
+        <group
+            android:scaleX="-1"
+            android:translateX="108">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+        </group>
+        <group
+            android:rotation="72"
+            android:translateX="94.37647"
+            android:translateY="-9.898071">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+            <group
+                android:scaleX="-1"
+                android:translateX="108">
+                <group
+                    android:rotation="18"
+                    android:translateX="17.16675"
+                    android:translateY="-14.38657">
+                    <path
+                        android:pathData="M54 47l0 13 8 0"
+                        android:fillColor="#007a3d" />
+                </group>
+            </group>
+        </group>
+    </group>
+    <group
+        android:translateX="72">
+        <group
+            android:rotation="18"
+            android:translateX="17.16675"
+            android:translateY="-14.38657">
+            <path
+                android:pathData="M54 47l0 13 8 0"
+                android:fillColor="#007a3d" />
+        </group>
+        <group
+            android:scaleX="-1"
+            android:translateX="108">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+        </group>
+        <group
+            android:rotation="72"
+            android:translateX="94.37647"
+            android:translateY="-9.898071">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+            <group
+                android:scaleX="-1"
+                android:translateX="108">
+                <group
+                    android:rotation="18"
+                    android:translateX="17.16675"
+                    android:translateY="-14.38657">
+                    <path
+                        android:pathData="M54 47l0 13 8 0"
+                        android:fillColor="#007a3d" />
+                </group>
+            </group>
+        </group>
+        <group
+            android:rotation="-72"
+            android:translateX="-19.75031"
+            android:translateY="92.81603">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+            <group
+                android:scaleX="-1"
+                android:translateX="108">
+                <group
+                    android:rotation="18"
+                    android:translateX="17.16675"
+                    android:translateY="-14.38657">
+                    <path
+                        android:pathData="M54 47l0 13 8 0"
+                        android:fillColor="#007a3d" />
+                </group>
+            </group>
+        </group>
+        <group
+            android:scaleX="-1"
+            android:scaleY="-1"
+            android:rotation="-36"
+            android:translateX="132.954"
+            android:translateY="76.80061">
+            <group
+                android:rotation="18"
+                android:translateX="17.16675"
+                android:translateY="-14.38657">
+                <path
+                    android:pathData="M54 47l0 13 8 0"
+                    android:fillColor="#007a3d" />
+            </group>
+            <group
+                android:scaleX="-1"
+                android:translateX="108">
+                <group
+                    android:rotation="18"
+                    android:translateX="17.16675"
+                    android:translateY="-14.38657">
+                    <path
+                        android:pathData="M54 47l0 13 8 0"
+                        android:fillColor="#007a3d" />
+                </group>
+            </group>
+            <group
+                android:rotation="72"
+                android:translateX="94.37647"
+                android:translateY="-9.898071">
+                <group
+                    android:rotation="18"
+                    android:translateX="17.16675"
+                    android:translateY="-14.38657">
+                    <path
+                        android:pathData="M54 47l0 13 8 0"
+                        android:fillColor="#007a3d" />
+                </group>
+                <group
+                    android:scaleX="-1"
+                    android:translateX="108">
+                    <group
+                        android:rotation="18"
+                        android:translateX="17.16675"
+                        android:translateY="-14.38657">
+                        <path
+                            android:pathData="M54 47l0 13 8 0"
+                            android:fillColor="#007a3d" />
+                    </group>
+                </group>
+            </group>
+        </group>
+    </group>
+</vector>
