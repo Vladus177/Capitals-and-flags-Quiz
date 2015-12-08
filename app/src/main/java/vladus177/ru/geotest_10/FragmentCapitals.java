@@ -273,13 +273,15 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
 
     @Override //Click
     public void onClick(View v) {
+        int a;
         switch (strtext) {
             case "Easy":
                 totalTime = QUESTIONS;
                 wrong++;
-                for (int i = 0; i < VARIANTS; i++) {
-                    if (v == buttons[i]) {
-                        if (current_right == i) {
+                switch (v.getId()) {
+                    case R.id.button1:
+                        a = 0;
+                        if (a == current_right) {
                             wrong--;
                             right++;
                             showToastRight(this.layout);
@@ -287,7 +289,37 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                             showToastWrong(this.layout);
                         }
 
-                    }
+                        break;
+                    case R.id.button2:
+                        a = 1;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
+                    case R.id.button3:
+                        a = 2;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
+                    case R.id.button4:
+                        a = 3;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
                 }
 
                 time++;
@@ -305,9 +337,10 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
             case "Medium":
                 totalTime = QUESTIONS;
                 wrong++;
-                for (int i = 0; i < VARIANTS; i++) {
-                    if (v == buttons[i]) {
-                        if (current_right == i) {
+                switch (v.getId()) {
+                    case R.id.button1:
+                        a = 0;
+                        if (a == current_right) {
                             wrong--;
                             right++;
                             showToastRight(this.layout);
@@ -315,9 +348,38 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                             showToastWrong(this.layout);
                         }
 
-                    }
+                        break;
+                    case R.id.button2:
+                        a = 1;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
+                    case R.id.button3:
+                        a = 2;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
+                    case R.id.button4:
+                        a = 3;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
                 }
-
                 time++;
                 if (wrong > 5) {
                     showToastGameOver(this.layout);
@@ -357,9 +419,10 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
             case "Hard":
                 totalTime = QUESTIONS;
                 wrong++;
-                for (int i = 0; i < VARIANTS; i++) {
-                    if (v == buttons[i]) {
-                        if (current_right == i) {
+                switch (v.getId()) {
+                    case R.id.button1:
+                        a = 0;
+                        if (a == current_right) {
                             wrong--;
                             right++;
                             showToastRight(this.layout);
@@ -367,7 +430,37 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                             showToastWrong(this.layout);
                         }
 
-                    }
+                        break;
+                    case R.id.button2:
+                        a = 1;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
+                    case R.id.button3:
+                        a = 2;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
+                    case R.id.button4:
+                        a = 3;
+                        if (a == current_right) {
+                            wrong--;
+                            right++;
+                            showToastRight(this.layout);
+                        } else {
+                            showToastWrong(this.layout);
+                        }
+                        break;
                 }
                 time++;
                 if (wrong > 3) {
@@ -457,11 +550,11 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
 
     public void Dialog() {
         ad = new AlertDialog.Builder(context);
-        String title = getString(R.string.dialogTitle);
+        //String title = getString(R.string.dialogTitle);
         String message = getString(R.string.dialogMessage);
         final EditText input = new EditText(this.getActivity());
         ad.setView(input);
-        ad.setTitle(title);
+        //ad.setTitle(title);
         ad.setMessage(message);
         ad.setPositiveButton(getString(R.string.okButton), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {

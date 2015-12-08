@@ -30,13 +30,15 @@ public class DataBaseHelper extends SQLiteOpenHelper implements BaseColumns {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
+                          int version) {
         super(context, name, factory, version);
     }
 
-    public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version, DatabaseErrorHandler errorHandler) {
+   /* public DataBaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory,
+    int version, DatabaseErrorHandler errorHandler) {
         super(context, name, factory, version, errorHandler);
-    }
+    }*/
 
     @Override
     public void onCreate(SQLiteDatabase db) {

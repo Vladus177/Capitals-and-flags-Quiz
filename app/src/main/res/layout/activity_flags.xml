@@ -58,14 +58,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button1"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:layout_weight="1" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button2"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -82,7 +82,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:layout_weight="1" />
 
         <Button
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button4"
             android:nestedScrollingEnabled="false"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:layout_weight="1" />
     </LinearLayout>
 
