@@ -18,7 +18,7 @@ public class DataBaseHelper extends SQLiteOpenHelper implements BaseColumns {
     public static final String PLAYER_NAME = "name";
     public static final String GAME_MODE = "mode";
     public static final String PLAYER_SCORES = "playerScores";
-    private static final String DATABASE_CREATE_SCRIPT = "create table "
+    private static final String DATABASE_CREATE_SCRIPT = "create table if not exists "
             + DATABASE_TABLE + " (" + BaseColumns._ID
             + " integer primary key autoincrement, " + PLAYER_NAME
             + " text not null, " + GAME_MODE + " text not null, " + PLAYER_SCORES
@@ -50,5 +50,4 @@ public class DataBaseHelper extends SQLiteOpenHelper implements BaseColumns {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-
 }

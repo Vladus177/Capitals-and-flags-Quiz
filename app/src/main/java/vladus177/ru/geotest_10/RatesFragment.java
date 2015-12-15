@@ -1,6 +1,7 @@
 package vladus177.ru.geotest_10;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class RatesFragment extends android.support.v4.app.Fragment {
     ArrayList<Integer> scores = new ArrayList<>();
     Cursor cursor;
     String orderBy;
+    Context context;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -33,8 +35,11 @@ public class RatesFragment extends android.support.v4.app.Fragment {
                 container, false);
         orderBy = "playerScores DESC";
         Button deleteAll = (Button) fragment3Rates.findViewById(R.id.buttonDeleteAll);
+        //Button addBase = (Button) fragment3Rates.findViewById(R.id.addBase);
+        //Button deleteBase = (Button) fragment3Rates.findViewById(R.id.deleteBase);
         mDatabaseHelper = new DataBaseHelper(getActivity(), "mydatabase.db", null, 1);
         mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
+        context=getActivity();
         SQLread();
         LinearLayout linLayout = (LinearLayout) fragment3Rates.findViewById(R.id.linLayout);
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
@@ -61,7 +66,22 @@ public class RatesFragment extends android.support.v4.app.Fragment {
                 closeFragment();
             }
         });
+        /*deleteBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mSqLiteDatabase.execSQL("DROP TABLE IF EXISTS scores");
+                Log.d(LOG_TAG, "--- Delete database: ---");
+            }
+        });
+        addBase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                mDatabaseHelper.onCreate(mSqLiteDatabase);
+                Log.d(LOG_TAG, "--- onCreate database ---");
+
+            }
+        });*/
 
         return fragment3Rates;
     }

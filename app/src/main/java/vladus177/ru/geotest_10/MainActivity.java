@@ -8,9 +8,12 @@ import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 
 
@@ -31,12 +34,15 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
+        mDatabaseHelper = new DataBaseHelper(this, "mydatabase.db", null, 1);
+        mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
         container = (FrameLayout) findViewById(R.id.container);
         container2 = (FrameLayout) findViewById(R.id.container2);
         containerButtons = (FrameLayout) findViewById(R.id.containerButtons);
         game = "medium";
-        SQLstart();
+        mDatabaseHelper.onCreate(mSqLiteDatabase);
         addFragmentButtons();
 
 
@@ -110,13 +116,6 @@ public class MainActivity extends FragmentActivity {
         if (fragF != null) {
             fragF.getFragmentManager().beginTransaction().remove(fragC).commit();
         }
-    }
-
-    public void SQLstart() {
-        mDatabaseHelper = new DataBaseHelper(this, "mydatabase.db", null, 1);
-        SQLiteDatabase sdb;
-        sdb = mDatabaseHelper.getReadableDatabase();
-
     }
 
 }

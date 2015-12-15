@@ -438,7 +438,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                     questionCounter = 1;
                     numGenerator(numbers);
                 }
-                if (time < numbers.size()) {
+                if (time < numbers.size()&&isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
                 break;
@@ -520,7 +520,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()) {
+                } else if (time < numbers.size()&&isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
                 break;
@@ -601,7 +601,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()) {
+                } else if (time < numbers.size()&&isAdded()) {
                     LoadQuestion(numbers.get(time));
                     countDownTimer.start();
                     timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
@@ -749,7 +749,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                     toast = null;
                 }
                 closeFragment();
-            } else if (time < numbers.size()) {
+            } else if (time < numbers.size()&&isAdded()) {
                 LoadQuestion(numbers.get(time));
                 countDownTimer.start();
             }

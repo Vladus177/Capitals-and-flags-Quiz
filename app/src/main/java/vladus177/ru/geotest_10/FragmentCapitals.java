@@ -330,7 +330,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                     wrong = 0;
                     questionCounter = 1;
                     numGenerator(numbers);
-                } else if (time < numbers.size()) {
+                } else if (time < numbers.size()&&isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
                 break;
@@ -411,7 +411,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()) {
+                } else if (time < numbers.size()&&isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
 
@@ -492,7 +492,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()) {
+                } else if (time < numbers.size()&&isAdded()) {
                     LoadQuestion(numbers.get(time));
                     if (!timerHasStarted) {
                         countDownTimer.start();
@@ -648,7 +648,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                     toast = null;
                 }
                 closeFragment();
-            } else if (time < numbers.size()) {
+            } else if (time < numbers.size()&&isAdded()) {
                 LoadQuestion(numbers.get(time));
                 countDownTimer.start();
             }
