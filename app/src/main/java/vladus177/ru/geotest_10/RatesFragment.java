@@ -58,11 +58,14 @@ public class RatesFragment extends android.support.v4.app.Fragment {
         deleteAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mDatabaseHelper = new DataBaseHelper(getActivity(), "mydatabase.db", null, 1);
+                mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
                 Log.d(LOG_TAG, "--- Delete from mytabe: ---");
                 // удаляем по id
                 int delCount = mSqLiteDatabase.delete("scores", null, null);
                 Log.d(LOG_TAG, "deleted rows count = " + delCount);
                 mSqLiteDatabase.close();
+                mDatabaseHelper.close();
                 closeFragment();
             }
         });
@@ -88,10 +91,7 @@ public class RatesFragment extends android.support.v4.app.Fragment {
 
     public void SQLread() {
         cursor = mSqLiteDatabase.query("scores", null, null, null, null, null, orderBy);
-
-        cursor.moveToFirst();
-
-
+        //cursor.moveToFirst();
         while (cursor.moveToNext()) {
             //int id = cursor.getInt(cursor.getColumnIndex(DataBaseHelper._ID));
             String mname = cursor.getString(cursor.getColumnIndex(DataBaseHelper.PLAYER_NAME));
@@ -109,6 +109,8 @@ public class RatesFragment extends android.support.v4.app.Fragment {
 
         }
         cursor.close();
+        mSqLiteDatabase.close();
+        mDatabaseHelper.close();
 
     }
     private void closeFragment() {

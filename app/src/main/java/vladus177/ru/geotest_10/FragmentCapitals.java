@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -59,8 +61,8 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
     private String answer;
     public String name;
     final String LOG_TAG = "myLogs";
-    private DataBaseHelper dataBaseHelper;
-    private SQLiteDatabase SQLwriter;
+    private DataBaseHelper mDatabaseHelper;
+    private SQLiteDatabase mSqLiteDatabase;
     Context context;
     AlertDialog.Builder ad;
     AlertDialog.Builder fad;
@@ -87,8 +89,6 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                              Bundle savedInstanceState) {
         View fragment2View = inflater.inflate(R.layout.activity_capitals,
                 container, false);
-
-        //find them all
         button1 = (Button) fragment2View.findViewById(R.id.button1);
         button2 = (Button) fragment2View.findViewById(R.id.button2);
         button3 = (Button) fragment2View.findViewById(R.id.button3);
@@ -106,7 +106,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
         buttons[2] = button3;
         buttons[3] = button4;
         context = getActivity();
-        dataBaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
+
         countDownTimer = new CountDownTimerActivity(startTime, interval);
         //action
         numGenerator(numbers);
@@ -174,46 +174,48 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
 
     //stats
     private void Stats() {
-        if (strtext.equals("Easy")) {
-            double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
-            String stat = "";
-            stat += getString(R.string.note1);
-            stat += " " + right + " ";
-            stat += getString(R.string.note2);
-            stat += " " + totalTime + ". ";
-            stat += getString(R.string.note3);
-            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-            toast = Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG);
-            toast.show();
-        } else if (strtext.equals("Medium")) {
-            double rating = right;
-            String stat = "";
-            stat += getString(R.string.note1);
-            stat += " " + right + " ";
-            stat += getString(R.string.note2);
-            stat += " " + totalTime + ". ";
-            stat += getString(R.string.note3);
-            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-            toast = Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG);
-            toast.show();
-        } else {
-            double rating = right;
-            String stat = "";
-            stat += getString(R.string.note1);
-            stat += " " + (right * 2) + " ";
-            stat += getString(R.string.note2);
-            stat += " " + totalTime + ". ";
-            stat += getString(R.string.note3);
-            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-            toast = Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG);
-            toast.show();
-        }
+        if (isAdded()) {
+            if (strtext.equals("Easy")) {
+                double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
+                String stat = "";
+                stat += getString(R.string.note1);
+                stat += " " + right + " ";
+                stat += getString(R.string.note2);
+                stat += " " + totalTime + ". ";
+                stat += getString(R.string.note3);
+                stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+                toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
+                toast.show();
+            } else if (strtext.equals("Medium")) {
+                double rating = right;
+                String stat = "";
+                stat += getString(R.string.note1);
+                stat += " " + right + " ";
+                stat += getString(R.string.note2);
+                stat += " " + totalTime + ". ";
+                stat += getString(R.string.note3);
+                stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+                toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
+                toast.show();
+            } else {
+                double rating = right*2;
+                String stat = "";
+                stat += getString(R.string.note1);
+                stat += " " + right + " ";
+                stat += getString(R.string.note2);
+                stat += " " + totalTime + ". ";
+                stat += getString(R.string.note3);
+                stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+                toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        } else return;
     }
 
     //Toast for correct answer
     public void showToastRight(View view) {
         if (toast == null) {
-            toast = Toast.makeText(getActivity(), getString(R.string.right), Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.right), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
             LinearLayout toastContainer = (LinearLayout) toast.getView();
             ImageView toastView = new ImageView(getActivity());
@@ -223,7 +225,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
         } else {
             toast.cancel();
             toast = null;
-            toast = Toast.makeText(getActivity(), getString(R.string.right), Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.right), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
             LinearLayout toastContainer = (LinearLayout) toast.getView();
             ImageView toastView = new ImageView(getActivity());
@@ -238,20 +240,20 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
         if (toast == null) {
             toast = Toast.makeText(context, answer, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
-      /*  LinearLayout toastContainer = (LinearLayout) toast.getView();
+        LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView toastView = new ImageView(getActivity());
         toastView.setImageResource(R.drawable.wrong);
-        toastContainer.addView(toastView, 0);*/
+        toastContainer.addView(toastView, 0);
             toast.show();
         } else {
             toast.cancel();
             toast = null;
             toast = Toast.makeText(context, answer, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
-            /*LinearLayout toastContainer = (LinearLayout) toast.getView();
+            LinearLayout toastContainer = (LinearLayout) toast.getView();
             ImageView toastView = new ImageView(getActivity());
             toastView.setImageResource(R.drawable.wrong);
-            toastContainer.addView(toastView, 0);*/
+            toastContainer.addView(toastView, 0);
             toast.show();
         }
     }
@@ -259,13 +261,13 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
     //Toast game over
     public void showToastGameOver(View view) {
         if (toast == null) {
-            toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.gameOver), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         } else {
             toast.cancel();
             toast = null;
-            toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.gameOver), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
@@ -330,7 +332,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                     wrong = 0;
                     questionCounter = 1;
                     numGenerator(numbers);
-                } else if (time < numbers.size()&&isAdded()) {
+                } else if (time < numbers.size() && isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
                 break;
@@ -382,9 +384,9 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                 }
                 time++;
                 if (wrong > 5) {
-                    showToastGameOver(this.layout);
                     score = right;
                     Stats();
+                    showToastGameOver(this.layout);
                     if (right > 10) {
                         Dialog();
                     }
@@ -411,7 +413,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()&&isAdded()) {
+                } else if (time < numbers.size() && isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
 
@@ -419,6 +421,15 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
             case "Hard":
                 totalTime = QUESTIONS;
                 wrong++;
+                if (!timerHasStarted) {
+                    countDownTimer.start();
+                    timerHasStarted = true;
+                } else {
+                    countDownTimer.cancel();
+                    timerHasStarted = false;
+                    countDownTimer.start();
+                    timerHasStarted = true;
+                }
                 switch (v.getId()) {
                     case R.id.button1:
                         a = 0;
@@ -464,9 +475,9 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                 }
                 time++;
                 if (wrong > 3) {
-                    showToastGameOver(this.layout);
                     score = right * 2;
                     Stats();
+                    showToastGameOver(this.layout);
                     if (right > 10) {
                         Dialog();
                     }
@@ -492,17 +503,9 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()&&isAdded()) {
+                } else if (time < numbers.size() && isAdded()) {
                     LoadQuestion(numbers.get(time));
-                    if (!timerHasStarted) {
-                        countDownTimer.start();
-                        timerHasStarted = true;
-                    } else {
-                        countDownTimer.cancel();
-                        timerHasStarted = false;
-                    }
-                    timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
-
+                    //timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
                 }
                 break;
         }
@@ -538,18 +541,28 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
     }
 
     public void SQLwrite(String name, String strtext, int score) {
-        SQLwriter = dataBaseHelper.getWritableDatabase();
+        mDatabaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
+        mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
         ContentValues newValues = new ContentValues();
         newValues.put(DataBaseHelper.PLAYER_NAME, name);
         newValues.put(DataBaseHelper.GAME_MODE, strtext);
         newValues.put(DataBaseHelper.PLAYER_SCORES, score);
-        Log.d("myLogs", "Игрок записан" + name + " уровень " + strtext + " " + score);
-        SQLwriter.insert("scores", null, newValues);
-        SQLwriter.close();
+        Log.d("myLogs", "Игрок записан " + name + " уровень " + strtext + " " + score);
+        mSqLiteDatabase.insert("scores", null, newValues);
+        mSqLiteDatabase.close();
+        mDatabaseHelper.close();
+        newValues.clear();
     }
 
     public void Dialog() {
-        ad = new AlertDialog.Builder(context);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+        {
+            ad = new AlertDialog.Builder(context,R.style.myBackgroundStyle);
+        }
+        else
+        {
+            ad = new AlertDialog.Builder(context);
+        }
         //String title = getString(R.string.dialogTitle);
         String message = getString(R.string.dialogMessage);
         final EditText input = new EditText(this.getActivity());
@@ -578,9 +591,14 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
 
 
     public void firstDialog() {
-        fad = new AlertDialog.Builder(context);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            fad = new AlertDialog.Builder(context,R.style.myBackgroundStyle);
+        }
+        else {
+            fad = new AlertDialog.Builder(context);
+        }
         final String[] gameLevels = {"Easy", "Medium", "Hard"};
-        String title = "Выберите уровень сложности";
+        String title = getString(R.string.levelSelect);
         fad.setTitle(title);
         fad.setItems(gameLevels, new DialogInterface.OnClickListener() {
             @Override
@@ -588,18 +606,19 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                 // TODO Auto-generated method stub
                 strtext = gameLevels[item];
                 textViewLevel.setText(strtext);
-                LoadQuestion(numbers.get(time));
-                if (strtext.equals("Hard")) {
-                    if (!timerHasStarted) {
-                        countDownTimer.start();
-                        timerHasStarted = true;
-                    } else {
-                        countDownTimer.cancel();
-                        timerHasStarted = false;
+                if (isAdded()) {
+                    LoadQuestion(numbers.get(time));
+                    if (strtext.equals("Hard")) {
+                        if (!timerHasStarted) {
+                            countDownTimer.start();
+                            timerHasStarted = true;
+                        } else {
+                            countDownTimer.cancel();
+                            timerHasStarted = false;
+                        }
+                        timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
                     }
-                    timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
                 }
-
 
             }
         });
@@ -614,14 +633,14 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
 
         @Override
         public void onFinish() {
-            //timerText.setText("--");
+            timerText.setText("--");
             wrong++;
             showToastWrong(layout);
             time++;
             if (wrong > 3) {
-                showToastGameOver(layout);
                 score = right * 2;
                 Stats();
+                showToastGameOver(layout);
                 if (right > 10) {
                     Dialog();
                 }
@@ -648,7 +667,7 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
                     toast = null;
                 }
                 closeFragment();
-            } else if (time < numbers.size()&&isAdded()) {
+            } else if (time < numbers.size() && isAdded()) {
                 LoadQuestion(numbers.get(time));
                 countDownTimer.start();
             }
@@ -659,5 +678,4 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
             timerText.setText("" + millisUntilFinished / 1000);
         }
     }
-
 }

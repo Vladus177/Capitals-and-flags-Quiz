@@ -12,24 +12,28 @@
         android:text="@string/capitalsButton"
         android:id="@+id/capitalsButton"
         android:onClick="btnClick"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/flagsButton"
         android:id="@+id/flagsButon"
-
-
         android:onClick="btnClick"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/rateButton"
         android:id="@+id/rateButton"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"/>
 
 
 </LinearLayout>

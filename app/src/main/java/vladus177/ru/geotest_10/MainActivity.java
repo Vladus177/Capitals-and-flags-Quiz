@@ -1,21 +1,19 @@
 package vladus177.ru.geotest_10;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.database.sqlite.SQLiteDatabase;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
+
 import com.crashlytics.android.Crashlytics;
+
 import io.fabric.sdk.android.Fabric;
-
-
 
 
 public class MainActivity extends FragmentActivity {
@@ -31,6 +29,7 @@ public class MainActivity extends FragmentActivity {
     FrameLayout containerButtons;
     public String game;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,8 @@ public class MainActivity extends FragmentActivity {
         game = "medium";
         mDatabaseHelper.onCreate(mSqLiteDatabase);
         addFragmentButtons();
-
+        mDatabaseHelper.close();
+        mSqLiteDatabase.close();
 
     }
 
@@ -55,6 +55,22 @@ public class MainActivity extends FragmentActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         return true;
+    }
+
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+        if (mDatabaseHelper!=null)
+        {
+            mDatabaseHelper.close();
+        }
+        if (mSqLiteDatabase!=null)
+        {
+            mSqLiteDatabase.close();
+        }
+
     }
 
     @Override
@@ -86,8 +102,11 @@ public class MainActivity extends FragmentActivity {
     }
 
     public void addFragmentButtons() {
+        fragButtons = new FragmentButtons();
+        getSupportFragmentManager().beginTransaction().replace
+                (R.id.containerButtons, fragButtons).commit();
 
-        Configuration config = getResources().getConfiguration();
+        /*Configuration config = getResources().getConfiguration();
         if (config.orientation == Configuration.ORIENTATION_PORTRAIT) {
             fragButtons = new FragmentButtons();
             getSupportFragmentManager().beginTransaction().replace
@@ -96,7 +115,7 @@ public class MainActivity extends FragmentActivity {
             fragButtons = new FragmentButtons();
             getSupportFragmentManager().beginTransaction().replace
                     (R.id.container2, fragButtons).commit();
-        }
+        }*/
     }
 
     public void addFragmentRates() {

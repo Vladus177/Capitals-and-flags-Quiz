@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
@@ -282,45 +283,47 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
 
     //stats
     private void Stats() {
-        if (strtext.equals("Easy")) {
-            double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
-            String stat = "";
-            stat += getString(R.string.note1);
-            stat += " " + right + " ";
-            stat += getString(R.string.note2);
-            stat += " " + totalTime + ". ";
-            stat += getString(R.string.note3);
-            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-            toast = Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG);
-            toast.show();
-        } else if (strtext.equals("Medium")) {
-            double rating = right;
-            String stat = "";
-            stat += getString(R.string.note1);
-            stat += " " + right + " ";
-            stat += getString(R.string.note2);
-            stat += " " + totalTime + ". ";
-            stat += getString(R.string.note3);
-            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-            toast = Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG);
-            toast.show();
-        } else {
-            double rating = right;
-            String stat = "";
-            stat += getString(R.string.note1);
-            stat += " " + (right * 2) + " ";
-            stat += getString(R.string.note2);
-            stat += " " + totalTime + ". ";
-            stat += getString(R.string.note3);
-            stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
-            toast = Toast.makeText(getActivity(), stat, Toast.LENGTH_LONG);
-            toast.show();
-        }
+        if (isAdded()) {
+            if (strtext.equals("Easy")) {
+                double rating = Math.round(((double) right / ((double) right + (double) wrong)) * 100);
+                String stat = "";
+                stat += getString(R.string.note1);
+                stat += " " + right + " ";
+                stat += getString(R.string.note2);
+                stat += " " + totalTime + ". ";
+                stat += getString(R.string.note3);
+                stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+                toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
+                toast.show();
+            } else if (strtext.equals("Medium")) {
+                double rating = right;
+                String stat = "";
+                stat += getString(R.string.note1);
+                stat += " " + right + " ";
+                stat += getString(R.string.note2);
+                stat += " " + totalTime + ". ";
+                stat += getString(R.string.note3);
+                stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+                toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
+                toast.show();
+            } else {
+                double rating = right;
+                String stat = "";
+                stat += getString(R.string.note1);
+                stat += " " + (right * 2) + " ";
+                stat += getString(R.string.note2);
+                stat += " " + totalTime + ". ";
+                stat += getString(R.string.note3);
+                stat += " " + (rating + "").substring(0, (rating + "").length() - 2);
+                toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
+                toast.show();
+            }
+        } else return;
     }
 
     public void showToastRight(View view) {
         if (toast == null) {
-            toast = Toast.makeText(getActivity(), getString(R.string.right), Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.right), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
             LinearLayout toastContainer = (LinearLayout) toast.getView();
             ImageView toastView = new ImageView(getActivity());
@@ -330,7 +333,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
         } else {
             toast.cancel();
             toast = null;
-            toast = Toast.makeText(getActivity(), getString(R.string.right), Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.right), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
             LinearLayout toastContainer = (LinearLayout) toast.getView();
             ImageView toastView = new ImageView(getActivity());
@@ -345,20 +348,20 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
         if (toast == null) {
             toast = Toast.makeText(context, answer, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
-      /*  LinearLayout toastContainer = (LinearLayout) toast.getView();
+        LinearLayout toastContainer = (LinearLayout) toast.getView();
         ImageView toastView = new ImageView(getActivity());
         toastView.setImageResource(R.drawable.wrong);
-        toastContainer.addView(toastView, 0);*/
+        toastContainer.addView(toastView, 0);
             toast.show();
         } else {
             toast.cancel();
             toast = null;
             toast = Toast.makeText(context, answer, Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 0);
-            /*LinearLayout toastContainer = (LinearLayout) toast.getView();
+            LinearLayout toastContainer = (LinearLayout) toast.getView();
             ImageView toastView = new ImageView(getActivity());
             toastView.setImageResource(R.drawable.wrong);
-            toastContainer.addView(toastView, 0);*/
+            toastContainer.addView(toastView, 0);
             toast.show();
         }
     }
@@ -366,13 +369,13 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
     //Toast game over
     public void showToastGameOver(View view) {
         if (toast == null) {
-            toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.gameOver), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         } else {
             toast.cancel();
             toast = null;
-            toast = Toast.makeText(getActivity(), "Игра Закончена", Toast.LENGTH_SHORT);
+            toast = Toast.makeText(context, getString(R.string.gameOver), Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
         }
@@ -438,7 +441,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                     questionCounter = 1;
                     numGenerator(numbers);
                 }
-                if (time < numbers.size()&&isAdded()) {
+                if (time < numbers.size() && isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
                 break;
@@ -520,13 +523,22 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()&&isAdded()) {
+                } else if (time < numbers.size() && isAdded()) {
                     LoadQuestion(numbers.get(time));
                 }
                 break;
             case "Hard":
                 totalTime = QUESTIONS;
                 wrong++;
+                if (!timerHasStarted) {
+                    countDownTimer.start();
+                    timerHasStarted = true;
+                } else {
+                    countDownTimer.cancel();
+                    timerHasStarted = false;
+                    countDownTimer.start();
+                    timerHasStarted = true;
+                }
                 switch (v.getId()) {
                     case R.id.button1:
                         a = 0;
@@ -601,11 +613,9 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                         toast = null;
                     }
                     closeFragment();
-                } else if (time < numbers.size()&&isAdded()) {
+                } else if (time < numbers.size() && isAdded()) {
                     LoadQuestion(numbers.get(time));
-                    countDownTimer.start();
-                    timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
-
+                    // timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
                 }
                 break;
         }
@@ -649,10 +659,18 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
         Log.d("myLogs", "Игрок записан" + name + " уровень " + strtext + " " + score);
         SQLwriter.insert("scores", null, newValues);
         SQLwriter.close();
+        dataBaseHelper.close();
     }
 
     public void Dialog() {
-        ad = new AlertDialog.Builder(context);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
+        {
+            ad = new AlertDialog.Builder(context,R.style.myBackgroundStyle);
+        }
+        else
+        {
+            ad = new AlertDialog.Builder(context);
+        }
         //String title = getString(R.string.dialogTitle);
         String message = getString(R.string.dialogMessage);
         final EditText input = new EditText(this.getActivity());
@@ -680,9 +698,14 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
     }
 
     public void firstDialog() {
-        fad = new AlertDialog.Builder(context);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            fad = new AlertDialog.Builder(context,R.style.myBackgroundStyle);
+        }
+        else {
+            fad = new AlertDialog.Builder(context);
+        }
         final String[] gameLevels = {"Easy", "Medium", "Hard"};
-        String title = "Выберите уровень сложности";
+        String title = getString(R.string.levelSelect);
         fad.setTitle(title);
         fad.setItems(gameLevels, new DialogInterface.OnClickListener() {
             @Override
@@ -690,19 +713,19 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                 // TODO Auto-generated method stub
                 strtext = gameLevels[item];
                 textViewLevel.setText(strtext);
-                LoadQuestion(numbers.get(time));
-                if (strtext.equals("Hard")) {
-                    if (!timerHasStarted) {
-                        countDownTimer.start();
-                        timerHasStarted = true;
-                    } else {
-                        countDownTimer.cancel();
-                        timerHasStarted = false;
+                if (isAdded()) {
+                    LoadQuestion(numbers.get(time));
+                    if (strtext.equals("Hard")) {
+                        if (!timerHasStarted) {
+                            countDownTimer.start();
+                            timerHasStarted = true;
+                        } else {
+                            countDownTimer.cancel();
+                            timerHasStarted = false;
+                        }
+                        timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
                     }
-                    timerText.setText(timerText.getText() + String.valueOf(startTime / 1000));
                 }
-
-
             }
         });
         fad.show();
@@ -716,7 +739,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
 
         @Override
         public void onFinish() {
-            //timerText.setText("--");
+            timerText.setText("--");
             wrong++;
             showToastWrong(layout2);
             time++;
@@ -749,7 +772,7 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                     toast = null;
                 }
                 closeFragment();
-            } else if (time < numbers.size()&&isAdded()) {
+            } else if (time < numbers.size() && isAdded()) {
                 LoadQuestion(numbers.get(time));
                 countDownTimer.start();
             }

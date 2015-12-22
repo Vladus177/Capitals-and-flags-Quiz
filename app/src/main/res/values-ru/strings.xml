@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeoTest_1.0</string>
+    <string name="app_name">GeoTest</string>
 
 
     <string name="action_settings">Settings</string>
@@ -25,4 +25,7 @@
     <string name="result">Очки </string>
     <string name="right">Правильно</string>
     <string name="wrong">Неправильно</string>
+    <string name="clear">Очистить</string>
+    <string name="levelSelect">Уровень сложности</string>
+    <string name="gameOver">Игра Окончена</string>
 </resources>

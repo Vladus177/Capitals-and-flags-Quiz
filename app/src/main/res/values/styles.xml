@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NewTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowBackground">@color/Azul</item>
+    </style>
+
+</resources>

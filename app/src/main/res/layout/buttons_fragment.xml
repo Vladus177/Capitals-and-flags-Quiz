@@ -5,9 +5,11 @@
     android:gravity="top">
 
     <LinearLayout
+        android:splitMotionEvents="false"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp">
 
         <Button
             android:layout_width="wrap_content"
@@ -15,24 +17,31 @@
             android:text="@string/capitalsButton"
             android:id="@+id/capitalsButton"
             android:onClick="btnClick"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/buttons"
+            android:textColor="@android:color/white"
+            android:padding="2dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/flagsButton"
             android:id="@+id/flagsButon"
-
-
             android:onClick="btnClick"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/buttons"
+            android:textColor="@android:color/white"
+            android:padding="2dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/rateButton"
             android:id="@+id/rateButton"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/buttons"
+            android:textColor="@android:color/white"
+            android:padding="2dp" />
     </LinearLayout>
 
 

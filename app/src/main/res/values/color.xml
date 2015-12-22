@@ -5,6 +5,11 @@
     <color name="Black">#ff000000</color>
     <color name="Ivory">#fff0efcd</color>
     <color name="Azul">#ffc5fffd</color>
-
+    <color name="Lime">#cddc39</color>
+    <color name="Yellow">#FFEB3B</color>
+    <color name="Teal">#009688</color>
+    <color name="White">#fdfdfd</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent2">#80000000</color>
 
 </resources>

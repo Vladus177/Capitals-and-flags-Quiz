@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeoTest_1.0</string>
+    <string name="app_name">GeoTest</string>
 
 
     <string name="action_settings">Settings</string>
@@ -23,6 +23,9 @@
     <string name="bestPlayers">Best players</string>
     <string name="gameLevel">Game level </string>
     <string name="result">Scores </string>
-    <string name="right">Правильно</string>
-    <string name="wrong">Неправильно</string>
+    <string name="right">Right</string>
+    <string name="wrong">Wrong</string>
+    <string name="clear">Clear all</string>
+    <string name="levelSelect">Choose level</string>
+    <string name="gameOver">Game over</string>
 </resources>

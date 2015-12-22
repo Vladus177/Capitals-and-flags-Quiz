@@ -5,20 +5,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/layoutRates">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bestPlayers"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/textview">
+        android:id="@+id/textview"
+        android:textSize="35sp">
     </TextView>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Очистить"
+        android:text="@string/clear"
         android:id="@+id/buttonDeleteAll"
-        android:layout_gravity="bottom"
-        android:layout_weight="1" />
+        android:background="@drawable/buttons"
+        android:textColor="@android:color/white"/>
 
     <ScrollView
         android:layout_width="match_parent"
