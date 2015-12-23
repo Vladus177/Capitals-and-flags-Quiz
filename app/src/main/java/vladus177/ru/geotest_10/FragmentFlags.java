@@ -61,8 +61,8 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
     private String strtext;
     private String answer;
     public String name;
-    private DataBaseHelper dataBaseHelper;
-    private SQLiteDatabase SQLwriter;
+    private DataBaseHelper mDatabaseHelper;
+    private SQLiteDatabase mSqLiteDatabase;
     Context context;
     AlertDialog.Builder ad;
     AlertDialog.Builder fad;
@@ -222,7 +222,6 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
         buttons[2] = button3;
         buttons[3] = button4;
         context = getActivity();
-        dataBaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
         countDownTimer = new CountDownTimerActivity(startTime, interval);
         //action
         numGenerator(numbers);
@@ -307,10 +306,10 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
                 toast = Toast.makeText(context, stat, Toast.LENGTH_LONG);
                 toast.show();
             } else {
-                double rating = right;
+                double rating = right*2;
                 String stat = "";
                 stat += getString(R.string.note1);
-                stat += " " + (right * 2) + " ";
+                stat += " " + right + " ";
                 stat += getString(R.string.note2);
                 stat += " " + totalTime + ". ";
                 stat += getString(R.string.note3);
@@ -494,9 +493,9 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
 
                 time++;
                 if (wrong > 5) {
-                    showToastGameOver(this.layout2);
                     score = right;
                     Stats();
+                    showToastGameOver(this.layout2);
                     if (right > 10) {
                         Dialog();
                     }
@@ -585,9 +584,9 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
 
                 time++;
                 if (wrong > 3) {
-                    showToastGameOver(this.layout2);
                     score = right * 2;
                     Stats();
+                    showToastGameOver(this.layout2);
                     if (right > 10) {
                         Dialog();
                     }
@@ -651,15 +650,17 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
     }
 
     public void SQLwrite(String name, String strtext, int score) {
-        SQLwriter = dataBaseHelper.getWritableDatabase();
+        mDatabaseHelper = new DataBaseHelper(context, "mydatabase.db", null, 1);
+        mSqLiteDatabase = mDatabaseHelper.getWritableDatabase();
         ContentValues newValues = new ContentValues();
         newValues.put(DataBaseHelper.PLAYER_NAME, name);
         newValues.put(DataBaseHelper.GAME_MODE, strtext);
         newValues.put(DataBaseHelper.PLAYER_SCORES, score);
         Log.d("myLogs", "Игрок записан" + name + " уровень " + strtext + " " + score);
-        SQLwriter.insert("scores", null, newValues);
-        SQLwriter.close();
-        dataBaseHelper.close();
+        mSqLiteDatabase.insert("scores", null, newValues);
+        mSqLiteDatabase.close();
+        mDatabaseHelper.close();
+        newValues.clear();
     }
 
     public void Dialog() {
@@ -744,9 +745,9 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
             showToastWrong(layout2);
             time++;
             if (wrong > 3) {
-                showToastGameOver(layout2);
                 score = right * 2;
                 Stats();
+                showToastGameOver(layout2);
                 if (right > 10) {
                     Dialog();
                 }

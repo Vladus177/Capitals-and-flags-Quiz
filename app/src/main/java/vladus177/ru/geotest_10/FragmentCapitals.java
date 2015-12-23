@@ -106,7 +106,6 @@ public class FragmentCapitals extends android.support.v4.app.Fragment implements
         buttons[2] = button3;
         buttons[3] = button4;
         context = getActivity();
-
         countDownTimer = new CountDownTimerActivity(startTime, interval);
         //action
         numGenerator(numbers);
