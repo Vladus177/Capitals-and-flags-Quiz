@@ -700,14 +700,14 @@ public class FragmentFlags extends android.support.v4.app.Fragment implements Vi
 
     public void firstDialog() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            fad = new AlertDialog.Builder(context,R.style.myBackgroundStyle);
+            fad = new AlertDialog.Builder(context,R.style.myBackgroundStyle2);
         }
         else {
             fad = new AlertDialog.Builder(context);
         }
         final String[] gameLevels = {"Easy", "Medium", "Hard"};
-        String title = getString(R.string.levelSelect);
-        fad.setTitle(title);
+        //String title = getString(R.string.levelSelect);
+        //fad.setTitle(title);
         fad.setItems(gameLevels, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {

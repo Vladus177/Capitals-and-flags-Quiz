@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Flags">
+        <item>/nRusia/Rusia/China/Reino Unido/Canadá/1/</item>
+        <item>/nChile/Argentina/Chile/Japón/Perú/2/</item>
+        <item>/nEstados Unidos/Rusia/Canadá/Estados Unidos/México/3/</item>
+        <item>/nCanadá/Estados Unidos/Australia/Brasil/Canadá/4/</item>
+        <item>/nArgentina/Argentina/México/Grecia/Colombia/1/</item>
+        <item>/nChina/Корея/China/Rusia/Cuba/2/</item>
+        <item>/nJapón/Australia/India/Japón/China/3/</item>
+        <item>/nAlemania/Francia/Brasil/Canadá/Alemania/4/</item>
+        <item>/nItalia/Italia/Francia/Checa/Rusia/1/</item>
+        <item>/nFrancia/Checa/Francia/Italia/Alemania/2/</item>
+        <item>/nReino Unido/Irlanda/Francia/Reino Unido/Alemania/3/</item>
+        <item>/nPortugal/España/Eslovaquia/Italia/Portugal/4/</item>
+        <item>/nBrasil/Brasil/Chile/Argentina/Perú/1/</item>
+        <item>/nGrecia/Turquía/Grecia/Bulgaria/Chipre/2/</item>
+        <item>/nTurquía/Siria/Egipto/Turquía/Malasia/3/</item>
+        <item>/nBulgaria/Italia/Rumanía/Eslovaquia/Bulgaria/4/</item>
+        <item>/nRumanía/Rumanía/Bulgaria/Italia/Grecia/1/</item>
+        <item>/nMongolia/Malasia/Mongolia/Vietnam/Corea del Sur/2/</item>
+        <item>/nIrán/Turquía/Bulgaria/Irán/Siria/3/</item>
+        <item>/nIrak/India/Turquía/Egipto/Irak/4/</item>
+        <item>/nPolonia/Polonia/Checa/Bulgaria/Perú/1/</item>
+        <item>/nCheca/Eslovaquia/Checa/Alemania/Bulgaria/2/</item>
+        <item>/nEslovaquia/Países Bajos/Polonia/Eslovaquia/Checa/3/</item>
+        <item>/nEgipto/Turquía/Irak/Siria/Egipto/4/</item>
+        <item>/nSuecia/Suecia/Alemania/Países Bajos/Finlandia/1/</item>
+        <item>/nEspaña/Alemania/España/Portugal/Chile/2/</item>
+        <item>/nPerú/Argentina/Bolivia/Perú/Venezuela/3/</item>
+        <item>/nBolivia/España/Perú/Colombia/Bolivia/4/</item>
+        <item>/nAustralia/Australia/Nueva Zelanda/Reino Unido/Canadá/1/</item>
+        <item>/nNueva Zelanda/Australia/Nueva Zelanda/Reino Unido/Estados Unidos/2/</item>
+        <item>/nChipre/Grecia/Georgia/Chipre/Rumanía/3/</item>
+        <item>/nCorea del Sur/Vietnam/Malasia/Alemania/Corea del Sur/4/</item>
+        <item>/nMalasia/Malasia/Vietnam/Corea del Sur/India/1/</item>
+        <item>/nIndia/Irak/India/Irán/Bolivia/2/</item>
+        <item>/nSiria/Irán/Irak/Siria/Egipto/3/</item>
+        <item>/nFinlandia/Países Bajos/Italia/Suecia/Finlandia/4/</item>
+        <item>/nUcrania/Ucrania/Bielorrusia/Países Bajos/Rusia/1/</item>
+        <item>/nBielorrusia/Rusia/Bielorrusia/Ucrania/Georgia/2/</item>
+        <item>/nGeorgia/Chipre/Mongolia/Georgia/Rusia/3/</item>
+        <item>/nPaíses Bajos/Finlandia/Suecia/Alemania/Países Bajos/4/</item>
+        <item>/nSuiza/Suiza/Dinamarca/Malta/Irlanda/1/</item>
+        <item>/nIndonesia/India/Indonesia/Libia/Vietnam/2/</item>
+        <item>/nLetonia/Lituania/Estonia/Letonia/Rusia/3/</item>
+        <item>/nLituania/Polonia/Letonia/Estonia/Lituania/4/</item>
+        <item>/nEstonia/Estonia/Finlandia/Lituania/Países Bajos/1/</item>
+        <item>/nBélgica/Finlandia/Bélgica/Noruega/Islandia/2/</item>
+        <item>/nLibia/Морокко/Líbano/Libia/Siria/3/</item>
+        <item>/nLíbano/Libia/Vietnam/Irak/Líbano/4/</item>
+        <item>/nMarruecos/Marruecos/Túnez/Libia/Etiopía/1/</item>
+        <item>/nEmiratos Árabes/Libia/Emiratos Árabes/Egipto/Sudáfrica/2/</item>
+        <item>/nSudáfrica/Zimbabue/Irán/Sudáfrica/Pakistán/3/</item>
+        <item>/nColombia/Perú/Bolivia/Venezuela/Коломбия/4/</item>
+        <item>/nMéxico/México/Colombia/Brasil/Venezuela/1/</item>
+        <item>/nPanamá/Perú/Panamá/Bolivia/Ecuador/2/</item>
+        <item>/nVenezuela/Argentina/Perú/Venezuela/Ecuador/3/</item>
+        <item>/nCuba/Коста Рика/Nicaragua/Honduras/Cuba/4/</item>
+        <item>/nNicaragua/Nicaragua/Cuba/Argentina/Uruguay/1/</item>
+        <item>/nUruguay/Haití/Uruguay/Brasil/Nicaragua/2/</item>
+        <item>/nParaguay/Uruguay/Perú/Paraguay/Chile/3/</item>
+        <item>/nTailandia/Malasia/Corea del Sur/Vietnam/Tailandia/4/</item>
+        <item>/nVietnam/Vietnam/Líbano/Libia/Camboya/1/</item>
+        <item>/nCamboya/Vietnam/Camboya/Corea del Sur/Северная Корея/2/</item>
+        <item>/nPakistán/Siria/Irak/Pakistán/Turquía/3/</item>
+        <item>/nHungría/Rumanía/Eslovenia/Checa/Hungría/4/</item>
+        <item>/nEslovenia/Eslovenia/Checa/Serbia/Eslovaquia/1/</item>
+        <item>/nSerbia/Bulgaria/Serbia/Rumanía/Ucrania/2/</item>
+        <item>/nKazajistán/Uzbekistán/Turkmenistán/Kazajistán/Mongolia/3/</item>
+        <item>/nArmenia/Georgia/Turquíav/Moldavia/Armenia/4/</item>
+        <item>/nCroacia/Croacia/Serbia/Albania/Bulgaria/1/</item>
+        <item>/nEcuador/Perú/Ecuador/Bolivia/Venezuela/2/</item>
+        <item>/nAustria/Albania/Bélgica/Austria/Noruega/3/</item>
+        <item>/nAzerbaiyán/Armenia/Georgia/Rusia/Azerbaiyán/4/</item>
+        <item>/nAlbania/Albania/Montenegro/Serbia/Rusia/1/</item>
+        <item>/nArgelia/Libia/Argelia/Sudáfrica/Etiopía/2/</item>
+        <item>/nAngola/Vietnam/Líbano/Angola/Irak/3/</item>
+        <item>/nAfganistán/Siria/Irak/Irán/Afganistán/4/</item>
+        <item>/nBangladés/Bangladés/Arabia Saudita/Nepal/Libia/1/</item>
+        <item>/nBurkina Faso/Arabia Saudita/Burkina Faso/Etiopía/Afganistán/2/</item>
+        <item>/nHaití/Venezuela/Cuba/Haití/Nicaragua/3/</item>
+        <item>/nGuatemala/Nicaragua/Venezuela/Haití/Guatemala/4/</item>
+        <item>/nHonduras/Honduras/Ecuador/Bolivia/Venezuela/1/</item>
+        <item>/nDinamarca/Suecia/Dinamarca/Finlandia/Noruega/2/</item>
+        <item>/nZimbabue/Burkina Faso/Indonesia/Zimbabue/Maldivas/3/</item>
+        <item>/nIsrael/Turquía/Pakistán/Egipto/Israel/4/</item>
+        <item>/nJordania/Jordania/Arabia Saudita/Etiopía/Catar/1/</item>
+        <item>/nIrlanda/Italia/Irlanda/Reino Unido/Francia/2/</item>
+        <item>/nIslandia/Portugal/Austria/Islandia/Italia/3/</item>
+        <item>/nCamerún/Nepal/Catar/Kenia/Camerún/4/</item>
+        <item>/nCatar/Catar/Camboya/Kenia/Kuwait/1/</item>
+        <item>/nKenia/Pakistán/Kenia/Nepal/India/2/</item>
+        <item>/nCosta Rica/Madagascar/Cuba/Costa Rica/Panamá/3/</item>
+        <item>/nMadagascar/Honduras/Camboya/Nepal/Madagascar/4/</item>
+        <item>/nMaldivas/Maldivas/Chipre/Costa Rica/Cuba/1/</item>
+        <item>/nMalta/Malasia/Malta/Camboya/Chipre/2/</item>
+        <item>/nNepal/Madagascar/Honduras/Nepal/Catar/3/</item>
+        <item>/nEl Salvador/Costa Rica/Chile/Haití/El Salvador/4/</item>
+        <item>/nArabia Saudita/Arabia Saudita/Catar/Emiratos Árabes/Kuwait/1/</item>
+        <item>/nTúnez/Marruecos/Túnez/Angola/Argelia/2/</item>
+        <item>/nMontenegro/Serbia/Croacia/Montenegro/Polonia/3/</item>
+        <item>/nSri Lanka/Vietnam/Líbano/Corea del Sur/Sri Lanka/4/</item>
+        <item>/nEtiopía/Etiopía/Jamaica/Sudáfrica/Camerún/1/</item>
+        <item>/nJamaica/Cuba/Jamaica/Haití/Panamá/2/</item>
+        <item>/nKirguistán/Georgia/Kazajistán/Kirguistán/Tayikistán/3/</item>
+        <item>/nKuwait/Angola/Arabia Saudita/Catar/Kuwait/4/</item>
+        <item>/nMoldavia/Moldavia/Ucrania/Rumanía/Alemania/1/</item>
+        <item>/nNoruega/Finlandia/Noruega/Suecia/Suiza/2/</item>
+        <item>/nSingapur/Malasia/Corea del Sur/Singapur/China/3/</item>
+        <item>/nTayikistán/Turquía/Nepal/Mongolia/Tayikistán/4/</item>
+        <item>/nTurkmenistán/Turkmenistán/Kazajistán/Azerbaiyán/China/1/</item>
+        <item>/nFilipinas/Madagascar/Filipinas/Honduras/Corea del Sur/2/</item>
+    </array>
+</resources>

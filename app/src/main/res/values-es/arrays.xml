@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="Questions">
+        <item>/nCapital de Rusia/Moscú/Londres/San Petersburgo/Ekaterimburgo/1/</item>
+        <item>/nCapital de Chile/Buenos Aires/Santiago/Pekín/Rio de Janeiro/2/</item>
+        <item>/nCapital de Estados Unidos/Nueva York/Chicago/Washington/Los Ángeles/3/</item>
+        <item>/nCapital de Canadá/Vancouver/Toronto/Nueva York/Ottawa/4/</item>
+        <item>/nCapital de Argentina/Buenos Aires/Santiago/Mendoza/San Antonio/1/</item>
+        <item>/nCapital de China/Seúl/Pekín/Tokio/Vladivostok/2/</item>
+        <item>/nCapital de Japón/Ho Chi Minh/Pekín/Tokio/Kuala Lumpur/3/</item>
+        <item>/nCapital de Alemania/Hamburgo/Múnich/Fráncfort/Berlín/4/</item>
+        <item>/nCapital de Italia/Roma/París/Praga/Venecia/1/</item>
+        <item>/nCapital de Francia/Praga/París/Roma/Berlín/2/</item>
+        <item>/nCapital de Reino Unido/Dublín/París/Londres/Berlín/3/</item>
+        <item>/nCapital de Portugal/Madrid/Oporto/Barcelona/Lisboa/4/</item>
+        <item>/nCapital de Brasil/Brasilia/Santiago/Buenos Aires/Rio de Janeiro/1/</item>
+        <item>/nCapital de Grecia/Ankara/Atenas/Sofía/Nicosia/2/</item>
+        <item>/nCapital de Turquía/Damasco/Cairo/Ankara/Estambul/3/</item>
+        <item>/nCapital de Bulgaria/Varna/Bucarest/Bratislava/Sofía/4/</item>
+        <item>/nCapital de Rumanía/Bucarest/Sofía/Roma/Atenas/1/</item>
+        <item>/nCapital de Mongolia/Kuala Lumpur/Ulán Bator/Hanói/Seúl/2/</item>
+        <item>/nCapital de Irán/Estambul/Sofía/Teherán/Damasco/3/</item>
+        <item>/nCapital de Irak/Bombay/Ankara/Cairo/Bagdad/4/</item>
+        <item>/nCapital de Polonia/Varsovia/Cracovia/Praga/Madrid/1/</item>
+        <item>/nCapital de Checa/Bratislava/Praga/Fráncfort/Sofía/2/</item>
+        <item>/nCapital de Eslovaquia/Hamburgo/Varsovia/Bratislava/Praga/3/</item>
+        <item>/nCapital de Egipto/Ankara/Bagdad/Damasco/Cairo/4/</item>
+        <item>/nCapital de Suecia/Estocolmo/Múnich/Ámsterdam/Oslo/1/</item>
+        <item>/nCapital de España/Hamburgo/Madrid/Barcelona/Santiago/2/</item>
+        <item>/nCapital de Perú/Buenos Aires/La Paz/Lima/Caracas/3/</item>
+        <item>/nCapital de Bolivia/Rio de Janeiro/Lima/Caracas/La Paz/4/</item>
+        <item>/nCapital de Australia/Canberra/Sídney/Melbourne/Auckland/1/</item>
+        <item>/nCapital de Nueva Zelanda/Sídney/Wellington/Christchurch/Adelaida/2/</item>
+        <item>/nCapital de Chipre/Atenas/Limasol/Nicosia/Bucarest/3/</item>
+        <item>/nCapital de Corea del Sur/Hanói/Kuala Lumpur/Ho Chi Minh/Seúl/4/</item>
+        <item>/nCapital de Malasia/Kuala Lumpur/Hanói/Seúl/Nueva Delhi/1/</item>
+        <item>/nCapital de India/Bombay/Nueva Delhi/Bagdad/Teherán/2/</item>
+        <item>/nCapital de Siria/Bagdad/Teherán/Damasco/Cairo/3/</item>
+        <item>/nCapital de Finlandia/Oslo/Ámsterdam/Estocolmo/Helsinki/4/</item>
+        <item>/nCapital de Ucrania/Kiev/Minsk/Odesa/Moscú/1/</item>
+        <item>/nCapital de Bielorrusia/Moscú/Minsk/Kiev/Tiflis/2/</item>
+        <item>/nCapital de Georgia/Kutaisi/Batumi/Tiflis/Ereván/3/</item>
+        <item>/nCapital de Países Bajos/Helsinki/Oslo/Fráncfort/Ámsterdam/4/</item>
+        <item>/nCapital de Suiza/Berna/Copenhague/Ámsterdam/Glasgow/1/</item>
+        <item>/nCapital de Indonesia/Nueva Delhi/Yakarta/Trípoli/Ho Chi Minh/2/</item>
+        <item>/nCapital de Letonia/Vilna/Tallin/Riga/Kaliningrado/3/</item>
+        <item>/nCapital de Lituania/Daugavpils/Jurmala/Riga/Vilna/4/</item>
+        <item>/nCapital de Estonia/Tallin/Helsinki/Vilna/Ámsterdam/1/</item>
+        <item>/nCapital de Bélgica/Helsinki/Bruselas/Oslo/Róterdam/2/</item>
+        <item>/nCapital de Libia/Tánger/Abu Dabi/Trípoli/Damasco/3/</item>
+        <item>/nCapital de Líbano/Trípoli/Ho Chi Minh/Bagdad/Beirut/4/</item>
+        <item>/nCapital de Marruecos/Rabat/Tánger/Trípoli/Abu Dabi/1/</item>
+        <item>/nCapital de Emiratos Árabes/Trípoli/Abu Dabi/Sharm el-Sheij/Amán/2/</item>
+        <item>/nCapital de Sudáfrica/Johannesburgo/Teherán/Pretoria/Islamabad/3/</item>
+        <item>/nCapital de Colombia/Lima/La Paz/Caracas/Bogotá/4/</item>
+        <item>/nCapital de México/México/Bogotá/Rio de Janeiro/Caracas/1/</item>
+        <item>/nCapital de Panamá/Lima/Panamá/Honolulu/Quito/2/</item>
+        <item>/nCapital de Venezuela/Honolulu/Quito/Caracas/Lima/3/</item>
+        <item>/nCapital de Cuba/San José/Managua/Quito/La Habana/4/</item>
+        <item>/nCapital de Nicaragua/Managua/La Habana/Buenos Aires/Montevideo/1/</item>
+        <item>/nCapital de Uruguay/La Habana/Montevideo/San Pablo/Managua/2/</item>
+        <item>/nCapital de Paraguay/Montevideo/Lima/Asunción/Concepción/3/</item>
+        <item>/nCapital de Tailandia/Kuala Lumpur/Seúl/Ho Chi Minh/Bangkok/4/</item>
+        <item>/nCapital de Vietnam/Hanói/Ho Chi Minh/Beirut/Seúl/1/</item>
+        <item>/nCapital de Camboya/Hanói/Nom Pen/Seúl/Pionyang/2/</item>
+        <item>/nCapital de Pakistán/Damasco/Bagdad/Islamabad/Ankara/3/</item>
+        <item>/nCapital de Hungría/Bucarest/Bratislava/Praga/Budapest/4/</item>
+        <item>/nCapital de Eslovenia/Liubliana/Praga/Belgrado/Bratislava/1/</item>
+        <item>/nCapital de Serbia/Sofía/Belgrado/Bucarest/Minsk/2/</item>
+        <item>/nCapital de Kazajistán/Dusambé/Derbent/Astaná/Ulán Bator/3/</item>
+        <item>/nCapital de Armenia/Tiflis/Ankara/Chisináu/Ereván/4/</item>
+        <item>/nCapital de Croacia/Zagreb/Belgrado/Pristina/Varna/1/</item>
+        <item>/nCapital de Ecuador/Lima/Quito/La Paz/Caracas/2/</item>
+        <item>/nCapital de Austria/Bratislava/Bruselas/Viena/Oslo/3/</item>
+        <item>/nCapital de Azerbaiyán/Ereván/Tiflis/Majachkalá/Bakú/4/</item>
+        <item>/nCapital de Albania/Tirana/Podgorica/Belgrado/Pristina/1/</item>
+        <item>/nCapital de Argelia/Trípoli/Argel/Pretoria/Adís Abeba/2/</item>
+        <item>/nCapital de Angola/Ho Chi Minh/Beirut/Luanda/Bagdad/3/</item>
+        <item>/nCapital de Afganistán/Damasco/Bagdad/Teherán/Kabul/4/</item>
+        <item>/nCapital de Bangladés/Daca/Amán/Katmandú/Riad/1/</item>
+        <item>/nCapital de Burkina Faso/Amán/Uagadugú/Adís Abeba/Kabul/2/</item>
+        <item>/nCapital de Haití/San José/La Habana/Puerto Príncipe/Managua/3/</item>
+        <item>/nCapital de Guatemala/Managua/Caracas/Puerto Príncipe/Guatemala/4/</item>
+        <item>/nCapital de Honduras/Tegucigalpa/Quito/La Paz/Caracas/1/</item>
+        <item>/nCapital de Dinamarca/Oslo/Copenhague/Helsinki/Ámsterdam/2/</item>
+        <item>/nCapital de Zimbabue/Adís Abeba/Daca/Harare/Malé/3/</item>
+        <item>/nCapital de Israel/Ankara/Islamabad/Cairo/Jerusalén/4/</item>
+        <item>/nCapital de Jordania/Amán/Riad/Abu Dabi/Daca/1/</item>
+        <item>/nCapital de Irlanda/Glasgow/Dublín/Londres/Norfolk/2/</item>
+        <item>/nCapital de Islandia/Montreal/Nápoles/Reikiavik/Venecia/3/</item>
+        <item>/nCapital de Camerún/Doha/Daca/Harare/Yaundé/4/</item>
+        <item>/nCapital de Catar/Doha/Daca/Managua/Amán/1/</item>
+        <item>/nCapital de Kenia/Malé/Nairobi/Katmandú/Doha/2/</item>
+        <item>/nCapital de Costa Rica/Antananarivo/La Habana/San José/Panamá/3/</item>
+        <item>/nCapital de Madagascar/Tegucigalpa/Daca/Lima/Antananarivo/4/</item>
+        <item>/nCapital de Maldivas/Malé/Honolulu/San José/La Habana/1/</item>
+        <item>/nCapital de Malta/Malé/La Valeta/Milán/Marsella/2/</item>
+        <item>/nCapital de Nepal/Antananarivo/Tegucigalpa/Katmandú/Abu Dabi/3/</item>
+        <item>/nCapital de El Salvador/San José/Santiago/Puerto Príncipe/San Salvador/4/</item>
+        <item>/nCapital de Arabia Saudita/Riad/Doha/Amán/Adís Abeba/1/</item>
+        <item>/nCapital de Túnez/Tánger/Túnez/Colombo/Trípoli/2/</item>
+        <item>/nCapital de Montenegro/Belgrado/Pristina/Podgorica/Краков/3/</item>
+        <item>/nCapital de Sri Lanka/Daca/Beirut/Seúl/Colombo/4/</item>
+        <item>/nCapital de Etiopía/Adís Abeba/Kingston/Pretoria/Harare/1/</item>
+        <item>/nCapital de Jamaica/La Habana/Kingston/Puerto Príncipe/Panamá/2/</item>
+        <item>/nCapital de Kirguistán/Ereván/Astaná/Biskek/Asjabad/3/</item>
+        <item>/nCapital de Kuwait/Doha/Amán/Daca/Kuwait/4/</item>
+        <item>/nCapital de Moldavia/Chisináu/Tiráspol/Odesa/Bucarest/1/</item>
+        <item>/nCapital de Noruega/Helsinki/Oslo/Estocolmo/Ámsterdam/2/</item>
+        <item>/nCapital de Singapur/Kuala Lumpur/Seúl/Singapur/Pekín/3/</item>
+        <item>/nCapital de Tayikistán/Astaná/Dusambé/Derbent/Dusambé/4/</item>
+        <item>/nCapital de Turkmenistán/Asjabad/Astaná/Bakú/Kabul/1/</item>
+        <item>/nCapital de Filipinas/Antananarivo/Manila/Managua/Seúl/2/</item>
+
+
+    </array>
+</resources>

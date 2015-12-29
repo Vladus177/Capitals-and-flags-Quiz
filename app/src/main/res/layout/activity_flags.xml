@@ -62,7 +62,8 @@
         android:id="@+id/linearLayout"
         android:layout_below="@+id/linearLayout2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:padding="6dp">
 
         <Button
             android:layout_width="match_parent"
@@ -92,7 +93,8 @@
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout3">
+        android:id="@+id/linearLayout3"
+        android:padding="6dp">
 
         <Button
             android:layout_width="match_parent"
