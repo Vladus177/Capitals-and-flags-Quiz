@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="myBackgroundStyle" parent="@android:style/Theme.Translucent">
+    <style name="myBackgroundStyleTr" parent="@android:style/Theme.Translucent">
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:background">@drawable/buttons</item>
+        <item name="android:background">@drawable/newbutton</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:textColor">@android:color/white</item>
+
     </style>
 </resources>

@@ -3,13 +3,17 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/layout"
     android:windowEnableSplitTouch="false"
-    android:splitMotionEvents="false">
+    android:splitMotionEvents="false"
+    android:background="@drawable/art2">
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
+        android:id="@+id/linearLayout1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -17,7 +21,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/textViewLevel"
             android:layout_weight="2"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -26,7 +31,8 @@
             android:id="@+id/Counter"
             android:layout_gravity="left|center"
             android:layout_weight="6"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="12sp" />
 
         <TextView
             android:layout_width="25dp"
@@ -34,93 +40,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:id="@+id/timerText"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="12sp" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:windowEnableSplitTouch="false"
-        android:splitMotionEvents="false"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout"
-        android:layout_below="@+id/Question"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:padding="6dp">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button1"
-            android:textSize="14sp"
-            android:layout_weight="1"
-            android:background="@drawable/buttons"
-            android:textColor="@android:color/white"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:windowEnableSplitTouch="false"
-        android:splitMotionEvents="false"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout3"
-        android:padding="6dp">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button2"
-            android:textSize="14sp"
-            android:layout_weight="1"
-            android:background="@drawable/buttons"
-            android:textColor="@android:color/white"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:padding="6dp"
-        android:id="@+id/linearLayout4">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button3"
-            android:textSize="14sp"
-            android:layout_weight="1"
-            android:background="@drawable/buttons"
-            android:textColor="@android:color/white"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dp"
-        android:layout_below="@+id/linearLayout4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button4"
-            android:nestedScrollingEnabled="false"
-            android:textSize="14sp"
-            android:layout_weight="1"
-            android:background="@drawable/buttons"
-            android:textColor="@android:color/white"/>
     </LinearLayout>
 
     <TextView
@@ -128,11 +50,81 @@
         android:layout_height="wrap_content"
         android:id="@+id/Question"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_below="@+id/linearLayout1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/WrongRightTextView"
+        android:layout_below="@+id/Question"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:layout_centerHorizontal="true"
+        style="@style/myBackgroundStyle2"
+        android:textSize="20sp"
+        android:layout_below="@+id/WrongRightTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        style="@style/myBackgroundStyle2"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        style="@style/myBackgroundStyle2"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        style="@style/myBackgroundStyle2"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewRightCounter"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/Teal"
+        android:textStyle="bold" />
 
 </RelativeLayout>

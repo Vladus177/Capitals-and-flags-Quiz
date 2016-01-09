@@ -5,18 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/art2">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:id="@+id/containerButtons"
-        tools:layout="@layout/buttons_fragment">
-    </FrameLayout>
 
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:id="@+id/container"
         tools:layout="@layout/activity_flags"/>

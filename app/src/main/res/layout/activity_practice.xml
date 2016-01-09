@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageSwitcher"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <TextSwitcher
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSwitcher"
+        android:layout_below="@+id/imageSwitcher"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        style="@style/myBackgroundStyle2"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:id="@+id/buttonNext"
+        style="@style/myBackgroundStyle2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prev"
+        android:id="@+id/buttonPrevious"
+        style="@style/myBackgroundStyle2"
+        android:layout_alignTop="@+id/buttonNext"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:id="@+id/buttonBack2"
+        style="@style/myBackgroundStyle2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="4dp" />
+</RelativeLayout>

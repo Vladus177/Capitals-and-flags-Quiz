@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">GeoTest</string>
-
-
+    <string name="app_name">Capitals and Flags Quiz</string>
     <string name="action_settings">Settings</string>
     <string name="capitalsButton">Столицы</string>
     <string name="flagsButton">Флаги</string>
@@ -12,20 +10,38 @@
     <string name="note5">Отвечено</string>
     <string name="note6">вопросов</string>
     <string name="imageFlag">flag</string>
-    <string name="Easy">Тренировка</string>
-    <string name="Medium">Средний</string>
+    <string name="Easy">Легкий</string>
     <string name="Hard">Тяжелый</string>
     <string name="rateButton">Рейтинг</string>
     <string name="okButton">ОК</string>
     <string name="cancelButton">Отмена</string>
     <string name="dialogTitle">Отличный результат</string>
-    <string name="dialogMessage">Введите имя для записи в рейтинг</string>
-    <string name="bestPlayers">Лучшие игроки</string>
-    <string name="gameLevel">Уровень </string>
+    <string name="dialogMessage">Введите имя для сохранения результата</string>
+    <string name="bestPlayers">Рекорды</string>
+    <string name="gameLevel">Режим Игры: </string>
     <string name="result">Очки </string>
     <string name="right">Правильно</string>
     <string name="wrong">Неправильно</string>
-    <string name="clear">Очистить</string>
+    <string name="clear">Удалить все</string>
     <string name="levelSelect">Уровень сложности</string>
     <string name="gameOver">Игра Окончена</string>
+    <string name="back">Меню</string>
+    <string name="over">Время закончилось</string>
+    <string name="heart5"> -5 </string>
+    <string name="heart3"> -3 </string>
+    <string name="help50"> -50</string>
+    <string name="help110"> -120</string>
+    <string name="FLAG">Флаги</string>
+    <string name="CAPITALS">Столицы</string>
+    <string name="clock">Часы</string>
+    <string name="practice">Тренировка</string>
+    <string name="best">Рекорд:</string>
+    <string name="stats">Требуется 40 правильных ответов в режиме Easy</string>
+    <string name="exit">Вы уверены?</string>
+    <string name="exit2">Выход</string>
+    <string name="delete">Вы уверены?</string>
+    <string name="delete2">Все записи будут удалены.</string>
+    <string name="next">Вперед</string>
+    <string name="prev">Назад</string>
+    <string name="textNull">Рекорд:\n0</string>
 </resources>

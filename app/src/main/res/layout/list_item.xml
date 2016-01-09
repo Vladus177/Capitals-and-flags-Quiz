@@ -9,20 +9,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|center_horizontal"
-        android:textSize="24sp">
+        android:textSize="20sp"
+        android:textColor="@color/Teal"
+        android:textStyle="bold"
+        android:layout_margin="1dp">
     </TextView>
     <TextView
-        android:id="@+id/tvPosition"
+        android:id="@+id/tvLevel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
-        android:layout_marginLeft="5dp">
+        android:layout_marginLeft="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/Teal"
+        android:layout_marginTop="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp">
     </TextView>
     <TextView
-        android:id="@+id/tvSalary"
+        android:id="@+id/tvScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:textStyle="bold"
+        android:textColor="@color/Teal"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="1dp">
     </TextView>
 </FrameLayout>

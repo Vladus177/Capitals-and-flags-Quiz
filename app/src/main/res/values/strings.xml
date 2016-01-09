@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">GeoTest</string>
-
-
+    <string name="app_name">Capitals and Flags Quiz</string>
     <string name="action_settings">Settings</string>
     <string name="capitalsButton">Capitals</string>
     <string name="flagsButton">Flags</string>
@@ -13,19 +11,37 @@
     <string name="note6">questions</string>
     <string name="imageFlag">flag</string>
     <string name="Easy">Easy</string>
-    <string name="Medium">Medium</string>
     <string name="Hard">Hard</string>
     <string name="rateButton">Best Players</string>
     <string name="okButton">OK</string>
     <string name="cancelButton">Cancel</string>
     <string name="dialogTitle">Excellent</string>
-    <string name="dialogMessage">Enter the name to save result</string>
-    <string name="bestPlayers">Best players</string>
-    <string name="gameLevel">Game level </string>
+    <string name="dialogMessage">Enter the name to save a score</string>
+    <string name="bestPlayers">Hi Scores</string>
+    <string name="gameLevel">Game Mode: </string>
     <string name="result">Scores </string>
     <string name="right">Right</string>
     <string name="wrong">Wrong</string>
-    <string name="clear">Clear all</string>
+    <string name="clear">Reset all</string>
     <string name="levelSelect">Choose level</string>
-    <string name="gameOver">Game over</string>
+    <string name="gameOver">Game Over</string>
+    <string name="back">Main menu</string>
+    <string name="over">Time over</string>
+    <string name="heart5"> -5 </string>
+    <string name="heart3"> -3 </string>
+    <string name="help50"> -50</string>
+    <string name="help110"> -120</string>
+    <string name="FLAG">Flags</string>
+    <string name="CAPITALS">Capitals</string>
+    <string name="clock">Clock</string>
+    <string name="practice">Practice</string>
+    <string name="best">Best:</string>
+    <string name="stats">40 correct answers in Easy mode to unlock </string>
+    <string name="exit">Are you sure?</string>
+    <string name="exit2">Exit</string>
+    <string name="delete">Are you sure?</string>
+    <string name="delete2">All records will be deleted.</string>
+    <string name="next">Next</string>
+    <string name="prev">Prev</string>
+    <string name="textNull">Best:\n0</string>
 </resources>

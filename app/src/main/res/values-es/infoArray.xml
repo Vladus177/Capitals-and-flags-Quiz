@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="info">
+        <item>Rusia \n Capital: Moscú \n Población: 146,489,230</item>
+        <item>Chile \n Capital: Santiago \n Población: 18,191,900</item>
+        <item>Estados Unidos \n Capital: Washington, D C  \n Población: 322,573,000</item>
+        <item>Canadá \n Capital: Ottawa \n Población: 35,985,751</item>
+        <item>Argentina \n Capital: Buenos Aires \n Población: 43,590,400</item>
+        <item>China \n Capital: Pekín \n Población: 1,374,110,000</item>
+        <item>Japón \n Capital: Tokio \n Población: 126,880,000</item>
+        <item>Alemania \n Capital: Berlín \n Población: 81,292,400</item>
+        <item>Italia \nCapital: Roma \n Población: 60,725,000</item>
+        <item>Francia \n Capital: París \n Población: 66,539,000</item>
+        <item>Reino Unido \n Capital: Londres \n Población: 64,800,000</item>
+        <item>Portugal \n Capital: Lisboa \n Población: 10,374,822</item>
+        <item>Brasil \n Capital: Brasilia \n Población: 205,434,000</item>
+        <item>Grecia \n Capital: Atenas \n Población: 10,846,979</item>
+        <item>Turquía \n Capital: Ankara \n Población: 77,695,904</item>
+        <item>Bulgaria \n Capital: Sofía \n Población: 7,202,198</item>
+        <item>Rumania \n Capital: Bucarest \n Población: 19,942,642</item>
+        <item>Mongolia \n Capital: Ulán Bator \n Población: 3,059,340</item>
+        <item>Irán \n Capital: Teherán \n Población: 78,911,100</item>
+        <item>Irak \n Capital: Bagdad \n Población: 36,004,552</item>
+        <item>Polonia \n Capital: Varsovia \n Población: 38,484,000</item>
+        <item>República Checa \n Capital: Praga \n Población: 10,541,466</item>
+        <item>Eslovaquia \n Capital: Bratislava \n Población: 5,424,058</item>
+        <item>Egipto \n Capital: El Cairo \n Población: 90,162,300</item>
+        <item>Suecia \n Capital: Estocolmo \n Población: 9,838,480</item>
+        <item>España \n Capital: Madrid \n Población: 46,423,064</item>
+        <item>Perú \n Capital: Lima \n Población: 31,488,700</item>
+        <item>Bolivia \n Capital: La Paz \n Población: 10,985,059</item>
+        <item>Australia \n Capital: Canberra \n Población: 24,014,300</item>
+        <item>Nueva Zelanda \n Capital: Wellington \n Población: 4,644,610</item>
+        <item>Chipre \n Capital: Nicosia \n Población: 847,000</item>
+        <item>Corea del Sur \n Capital: Seúl \n Población: 51,529,338</item>
+        <item>Malasia \n Capital: Kuala Lumpur \n Población: 30,817,500</item>
+        <item>India \n Capital: Nueva Delhi \n Población: 1,282,500,000</item>
+        <item>Siria \n Capital: Damasco \n Población: 23,555,859</item>
+        <item>Finlandia \n Capital: Helsinki \n Población: 5,496,117</item>
+        <item>Ucrania \n Capital: Kiev \n Población: 42,789,472</item>
+        <item>Bielorrusia \n Capital: Minsk \n Población: 9,494,200</item>
+        <item>Georgia \n Capital: Tiflis \n Población: 3,729,500</item>
+        <item>Países Bajos \n Capital: Ámsterdam \n Población: 16,981,000</item>
+        <item>Suiza \n Capital: Berna \n Población: 8,306,200</item>
+        <item>Indonesia \n Capital: Yakarta \n Población: 264,886,922</item>
+        <item>Letonia \n Capital: Riga \n Población: 1,973,700</item>
+        <item>Lituania \n Capital: Vilna \n Población: 2,890,679</item>
+        <item>Estonia \n Capital: Tallin \n Población: 1,313,271</item>
+        <item>Bélgica \n Capital: Bruselas \n Población: 11,291,746</item>
+        <item>Libia \n Capital: Trípoli \n Población: 6,494,423</item>
+        <item>Líbano \n Capital: Beirut \n Población: 4,168,000</item>
+        <item>Marruecos \n Capital: Rabat \n Población: 33,337,529</item>
+        <item>Emiratos Árabes Unidos \n Capital: Abu Dabi \n Población: 9,497,490</item>
+        <item>Sudáfrica \n Capital: Pretoria \n Población: 54,956,900</item>
+        <item>Colombia \n Capital: Bogotá \n Población: 48,467,100</item>
+        <item>México \n Capital: Ciudad de México \n Población: 122,273,500</item>
+        <item>Panamá \n Capital: Panamá \n Población: 3,764,166</item>
+        <item>Venezuela \n Capital: Caracas \n Población: 31,028,700</item>
+        <item>Cuba \n Capital: La Habana \n Población: 11,238,317</item>
+        <item>Nicaragua \n Capital: Managua \n Población: 6,198,154</item>
+        <item>Uruguay \n Capital: Montevideo \n Población: 3,480,222</item>
+        <item>Paraguay \n Capital: Asunción \n Población: 7,112,594</item>
+        <item>Tailandia \n Capital: Bangkok \n Población: 65,216,948</item>
+        <item>Vietnam \n Capital: Hanói \n Población: 91,700,000</item>
+        <item>Camboya \n Capital: Phnom Penh \n Población: 15,626,444</item>
+        <item>Pakistán \n Capital: Islamabad \n Población: 192,402,044</item>
+        <item>Hungría \n Capital: Budapest \n Población: 9,849,000</item>
+        <item>Eslovenia \n Capital: Liubliana \n Población: 2,069,201</item>
+        <item>Serbia \n Capital: Belgrado \n Población: 7,114,393</item>
+        <item>Kazajistán \n Capital: Astaná \n Población: 17,630,700</item>
+        <item>Armenia \n Capital: Ereván \n Población: 3,004,000</item>
+        <item>Croacia \n Capital: Zagreb \n Población: 4,225,316</item>
+        <item>Ecuador \n Capital: Quito \n Población: 16,278,844</item>
+        <item>Austria \n Capital: Viena \n Población: 8,662,588</item>
+        <item>Azerbaiyán \n Capital: Bakú \n Población: 9,687,300</item>
+        <item>Albania \n Capital: Tirana \n Población: 2,893,005</item>
+        <item>Argelia \n Capital: Argel \n Población: 40,400,000</item>
+        <item>Angola \n Capital: Luanda \n Población: 24,383,301</item>
+        <item>Afganistán \n Capital: Kabul \n Población: 27,101,365</item>
+        <item>Bangladés \n Capital: Daca \n Población: 159,652,000</item>
+        <item>Burkina Faso \n Capital: Uagadugú \n Población: 18,450,494</item>
+        <item>Haití \n Capital: Puerto Príncipe \n Población: 11,078,033</item>
+        <item>Guatemala \n Capital: Ciudad de Guatemala \n Población: 16,176,133</item>
+        <item>Honduras \n Capital: Tegucigalpa \n Población: 8,576,53</item>
+        <item>Dinamarca \n Capital: Copenhague \n Población: 5,699,220</item>
+        <item>Zimbabue \n Capital: Harare \n Población: 16,559,817</item>
+        <item>Israel \n Capital: Jerusalén \n Población: 8,462,000</item>
+        <item>Jordania \n Capital: Amán \n Población: 7,887,763</item>
+        <item>Irlanda \n Capital: Dublín \n Población: 4,635,400</item>
+        <item>Islandia \n Capital: Reikiavik \n Población: 331,310</item>
+        <item>Camerún \n Capital: Yaundé \n Población: 24,875,522</item>
+        <item>Catar \n Capital: Doha \n Población: 2,463,460</item>
+        <item>Kenia \n Capital: Nairobi \n Población: 49,194,146</item>
+        <item>Costa Rica \n Capital: San José \n Población: 4,832,234</item>
+        <item>Madagascar \n Capital: Antananarivo \n Población: 22,434,363</item>
+        <item>Maldivas \n Capital: Malé \n Población: 341,256</item>
+        <item>Malta \n Capital: 	La Valeta \n Población: 445,426</item>
+        <item>Nepal \n Capital: Katmandú \n Población: 28,431,500</item>
+        <item>El Salvador \n Capital: San Salvador \n Población: 6,520,675</item>
+        <item>Arabia Saudí \n Capital: Riad \n Población: 32,248,200</item>
+        <item>Túnez \n Capital: Túnez \n Población: 10,982,754</item>
+        <item>Montenegro \n Capital: Podgorica \n Población: 621,810</item>
+        <item>Sri Lanka \n Capital: Colombo \n Población: 20,966,000</item>
+        <item>Etiopía \n Capital: Adís Abeba \n Población: 92,206,005</item>
+        <item>Jamaica \n Capital: Kingston \n Población: 2,723,246</item>
+        <item>Kirguistán \n Capital: Biskek \n Población: 5,975,000</item>
+        <item>Kuwait \n Capital: Ciudad de Kuwait \n Población: 4,183,658</item>
+        <item>Moldavia \n Capital: Chisinau \n Población: 3,555,200</item>
+        <item>Noruega \n Capital: Oslo \n Población: 5,214,890</item>
+        <item>Singapur \n Capital: Singapur \n Población: 5,535,000</item>
+        <item>Tayikistán \n Capital: Dusambé \n Población: 8,352,000</item>
+        <item>Turkmenistán \n Capital: Asjabad \n Población: 4,751,120</item>
+        <item>Filipinas \n Capital: Manila \n Población: 102,603,000</item>
+        <item>Birmania \n Capital: Naipyidó \n Población: 51,486,253</item>
+        <item>Yemen \n Capital: Saná \n Población: 25,956,000</item>
+        <item>Sudán \n Capital: Jartum \n Población: 39,598,700</item>
+        <item>Uganda \n Capital: Kampala \n Población: 34,856,813</item>
+        <item>Uzbekistán \n Capital: Taskent \n Población: 31,022,500</item>
+        <item>Ghana \n Capital: Acra \n Población: 27,043,093</item>
+        <item>Mozambique \n Capital: Maputo \n Población: 26,423,700</item>
+        <item>Tanzania \n Capital: Dodoma \n Población: 58,001,408</item>
+        <item>Nigeria \n Capital: Abuya \n Población: 194,887,638</item>
+        <item>Corea del Norte \n Capital: Pionyang \n Población: 25,155,000</item>
+    </array>
+</resources>

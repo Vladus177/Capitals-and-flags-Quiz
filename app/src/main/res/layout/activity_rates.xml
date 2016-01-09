@@ -6,22 +6,41 @@
     android:orientation="vertical"
     android:id="@+id/layoutRates">
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutButtonsRF"
+        android:layout_marginTop="4dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            android:id="@+id/buttonDeleteAll"
+            style="@style/myBackgroundStyle2"
+            android:layout_weight="1"
+            android:layout_marginRight="2dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:id="@+id/buttonBack"
+            style="@style/myBackgroundStyle2"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp" />
+    </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bestPlayers"
         android:layout_gravity="center_horizontal"
         android:id="@+id/textview"
-        android:textSize="35sp">
+        android:textSize="35sp"
+        android:layout_marginTop="2dp">
     </TextView>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/clear"
-        android:id="@+id/buttonDeleteAll"
-        android:background="@drawable/buttons"
-        android:textColor="@android:color/white"/>
 
     <ScrollView
         android:layout_width="match_parent"

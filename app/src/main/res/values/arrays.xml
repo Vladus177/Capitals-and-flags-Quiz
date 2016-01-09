@@ -52,14 +52,14 @@
         <item>/nThe capital of Morocco/Rabat/Tangier/Tripoli/Abu Dhabi/1/</item>
         <item>/nThe capital of Arab Emirates/Tripoli/Abu Dhabi/Sharm el-Sheikh/Dubai/2/</item>
         <item>/nThe capital of South Africa/Johannesburg/Tehran/Pretoria/Islamabad/3/</item>
-        <item>/nThe capital of Columbia/Lima/La Paz/Caracas/Bogota/4/</item>
+        <item>/nThe capital of Colombia/Lima/La Paz/Caracas/Bogota/4/</item>
         <item>/nThe capital of Mexico/Mexico/Bogota/Rio de Janeiro/Caracas/1/</item>
         <item>/nThe capital of Panama/Lima/Panama/Honolulu/Quito/2/</item>
         <item>/nThe capital of Venezuela/Honolulu/Quito/Caracas/Lima/3/</item>
         <item>/nThe capital of Cuba/San Jose/Managua/Quito/Habana/4/</item>
         <item>/nThe capital of Nicaragua/Managua/Habana/Buenos Aires/Montevideo/1/</item>
         <item>/nThe capital of Uruguay/Habana/Montevideo/Asuncion/Managua/2/</item>
-        <item>/nThe capital of Paraguay/Montevideo/Lima/Asuncion/Consepcion/3/</item>
+        <item>/nThe capital of Paraguay/Montevideo/Lima/Asuncion/Concepcion/3/</item>
         <item>/nThe capital of Thailand/Kuala Lumpur/Seoul/Saigon/Bangkok/4/</item>
         <item>/nThe capital of Vietnam/Hanoi/Ho Chi Minh/Beirut/Seoul/1/</item>
         <item>/nThe capital of Cambodia/Hanoi/Phnom Penh/Seoul/Pyongyang/2/</item>
@@ -111,6 +111,16 @@
         <item>/nThe capital of Tajikstan/Astana/Bishkek/Derbent/Dushanbe/4/</item>
         <item>/nThe capital of Turkmenistan/Ashgabat/Astana/Baku/Kabul/1/</item>
         <item>/nThe capital of Philippines/Antananarivo/Manila/Managua/Seoul/2/</item>
+        <item>/nThe capital of Myanmar/Beirut/Dhaka/Naypyidaw/Seoul/3/</item>
+        <item>/nThe capital of Yemen/Male/Dhaka/Tangier/Sana\'a/4/</item>
+        <item>/nThe capital of Sudan/Khartoum/Jakarta/Harare/Amman/1/</item>
+        <item>/nThe capital of Uganda/Harare/Kampala/Naypyidaw/Kingston/2/</item>
+        <item>/nThe capital of Uzbekistan/Astana/Bishkek/Tashkent/Ankara/3/</item>
+        <item>/nThe capital of Ghana/Riyadh/Harare/Doha/Accra/4/</item>
+        <item>/nThe capital of Mozambique/Maputo/Jakarta/Male/Kabul/1/</item>
+        <item>/nThe capital of Tanzania/Maputo/Dodoma/Harare/Dhaka/2/</item>
+        <item>/nThe capital of Nigeria/Dhaka/Beirut/Abuja/Accra/3/</item>
+        <item>/nThe capital of North Korea/Seoul/Manila/Hanoi/Pyongyang/4/</item>
 
 
     </array>
