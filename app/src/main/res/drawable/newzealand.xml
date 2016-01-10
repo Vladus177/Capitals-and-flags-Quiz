@@ -44,7 +44,7 @@
         android:scaleY="0.5"
         android:translateY="-6E-06">
         <path
-            android:pathData="M0 -7.8124995e-6l600 0L600 299.99999l-600 0z"
+            android:pathData="M0 -0.00000781249l600 0L600 299.99999l-600 0z"
             android:fillColor="#002b7f"
             android:strokeLineJoin="miter"
             android:strokeLineCap="butt" />
@@ -74,7 +74,7 @@
             android:strokeLineJoin="miter"
             android:strokeLineCap="butt" />
         <path
-            android:pathData="M0 -1.2e-5l0 22.36 155.28 77.64 44.72 0 -200 -100z"
+            android:pathData="M0 -0.000012l0 22.36 155.28 77.64 44.72 0 -200 -100z"
             android:fillColor="#ce1126"
             android:strokeLineJoin="miter"
             android:strokeLineCap="butt" />
@@ -84,7 +84,7 @@
             android:translateX="600"
             android:translateY="300">
             <path
-                android:pathData="M0 -1.2e-5l0 22.36 155.28 77.64 44.72 0 -200 -100z"
+                android:pathData="M0 -0.000012l0 22.36 155.28 77.64 44.72 0 -200 -100z"
                 android:fillColor="#ce1126"
                 android:strokeLineJoin="miter"
                 android:strokeLineCap="butt" />
