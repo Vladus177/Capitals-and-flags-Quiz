@@ -3,8 +3,8 @@
     <array name="Flags">
         <item>/nRussia/Russia/China/United Kingdom/Canada/1/</item>
         <item>/nChile/Argentina/Chile/Japan/Peru/2/</item>
-        <item>/nUsa/Russia/Canada/Usa/Mexico/3/</item>
-        <item>/nCanada/Usa/Scotland/Brazil/Canada/4/</item>
+        <item>/nUSA/Russia/Canada/USA/Mexico/3/</item>
+        <item>/nCanada/USA/Scotland/Brazil/Canada/4/</item>
         <item>/nArgentina/Argentina/Mexico/Greece/Colombia/1/</item>
         <item>/nChina/Korea/China/Russia/Cuba/2/</item>
         <item>/nJapan/Australia/India/Japan/China/3/</item>
@@ -30,7 +30,7 @@
         <item>/nPeru/Argentina/Bolivia/Peru/Venezuela/3/</item>
         <item>/nBolivia/Brazil/Peru/Colombia/Bolivia/4/</item>
         <item>/nAustralia/Australia/New Zealand/United Kingdom/Canada/1/</item>
-        <item>/nNewZealand/Australia/New Zealand/United Kingdom/Usa/2/</item>
+        <item>/nNewZealand/Australia/New Zealand/United Kingdom/USA/2/</item>
         <item>/nCyprus/Greece/Georgia/Cyprus/Romania/3/</item>
         <item>/nSouthKorea/Vietnam/Malaysia/Germany/South Korea/4/</item>
         <item>/nMalaysia/Malaysia/Vietnam/South Korea/India/1/</item>
@@ -64,7 +64,7 @@
         <item>/nVietnam/Vietnam/Lebannon/Libya/Cambodia/1/</item>
         <item>/nCambodia/Vietnam/Cambodia/South Korea/North Korea/2/</item>
         <item>/nPakistan/Syria/Iraq/Pakistan/Turkey/3/</item>
-        <item>/nHungary/Romania/Slovenia/CzechRepublic/Hungary/4/</item>
+        <item>/nHungary/Romania/Slovenia/Czech Republic/Hungary/4/</item>
         <item>/nSlovenia/Slovenia/CzechRepublic/Serbia/Slovakia/1/</item>
         <item>/nSerbia/Bulgaria/Serbia/Romania/Ukraine/2/</item>
         <item>/nKazakhstan/Armenia/Turkmenistan/Kazakhstan/Mongolia/3/</item>

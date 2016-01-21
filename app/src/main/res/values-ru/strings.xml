@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Capitals and Flags Quiz</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Настройки</string>
     <string name="capitalsButton">Столицы</string>
     <string name="flagsButton">Флаги</string>
     <string name="note1">Вы набрали</string>
@@ -36,7 +36,7 @@
     <string name="clock">Часы</string>
     <string name="practice">Тренировка</string>
     <string name="best">Рекорд:</string>
-    <string name="stats">Требуется 40 правильных ответов в режиме Easy</string>
+    <string name="stats">Требуется 40 правильных ответов в режиме Легкий</string>
     <string name="exit">Вы уверены?</string>
     <string name="exit2">Выход</string>
     <string name="delete">Вы уверены?</string>

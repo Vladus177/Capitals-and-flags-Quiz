@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Created by Владислав on 03.01.2016.
+ * Created by Владислав on 03.01.2016
  */
 public class FlagsMedium extends android.support.v4.app.Fragment implements View.OnClickListener {
     //Buttons
@@ -54,7 +55,7 @@ public class FlagsMedium extends android.support.v4.app.Fragment implements View
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
-    private String strtext = "Easy";
+    private String strtext;
     //private String answer;
     public String name;
     private DataBaseHelper mDatabaseHelper;
@@ -230,6 +231,7 @@ public class FlagsMedium extends android.support.v4.app.Fragment implements View
         buttons[2] = button3;
         buttons[3] = button4;
         context = getActivity();
+        strtext = getString(R.string.Easy);
         //action
         numGenerator(numbers);
         LoadQuestions();
@@ -446,9 +448,12 @@ public class FlagsMedium extends android.support.v4.app.Fragment implements View
         } else {
             ad = new AlertDialog.Builder(context);
         }
+        InputFilter[] lengthFilter = new InputFilter[1];
+        lengthFilter[0] = new InputFilter.LengthFilter(14);
         //String title = getString(R.string.dialogTitle);
         String message = getString(R.string.dialogMessage);
         final EditText input = new EditText(this.getActivity());
+        input.setFilters(lengthFilter);
         ad.setView(input);
         ad.setTitle(getString(R.string.gameOver));
         ad.setMessage(message);

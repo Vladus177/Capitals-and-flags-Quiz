@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Capitals and Flags Quiz</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Ajustes</string>
     <string name="capitalsButton">Capitales</string>
     <string name="flagsButton">Banderas</string>
-    <string name="note1"></string>
+    <string name="note1">Tiene</string>
     <string name="note2">respuestas correctas de</string>
     <string name="note3">Su puntaje es:</string>
     <string name="note4">de</string>

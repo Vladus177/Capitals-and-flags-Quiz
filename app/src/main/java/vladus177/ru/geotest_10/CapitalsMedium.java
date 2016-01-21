@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Created by Владислав on 31.12.2015.
+ * Created by Владислав on 31.12.2015
  */
 public class CapitalsMedium extends android.support.v4.app.Fragment implements View.OnClickListener {
     //Buttons
@@ -53,7 +54,7 @@ public class CapitalsMedium extends android.support.v4.app.Fragment implements V
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
-    private String strtext = "Easy";
+    private String strtext;
     //public String answer;
     public String name;
     final String LOG_TAG = "myLogs";
@@ -106,6 +107,7 @@ public class CapitalsMedium extends android.support.v4.app.Fragment implements V
         buttons[2] = button3;
         buttons[3] = button4;
         context = getActivity();
+        strtext = getString(R.string.Easy);
         //action
         numGenerator(numbers);
         LoadQuestions();
@@ -180,7 +182,7 @@ public class CapitalsMedium extends android.support.v4.app.Fragment implements V
     //stats
     private void Stats() {
         double rating = right;
-        String stat = "max" + maxScore;
+        String stat = "";
         stat += getString(R.string.note1);
         stat += " " + right + " ";
         stat += getString(R.string.note2);
@@ -327,9 +329,12 @@ public class CapitalsMedium extends android.support.v4.app.Fragment implements V
 
     public void Dialog() {
         ad = new AlertDialog.Builder(context);
+        InputFilter[] lengthFilter = new InputFilter[1];
+        lengthFilter[0] = new InputFilter.LengthFilter(14);
         //String title = getString(R.string.dialogTitle);
         String message = getString(R.string.dialogMessage);
         final EditText input = new EditText(this.getActivity());
+        input.setFilters(lengthFilter);
         ad.setView(input);
         ad.setTitle(getString(R.string.gameOver));
         ad.setMessage(message);

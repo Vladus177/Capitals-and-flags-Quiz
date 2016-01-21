@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * Created by Владислав on 04.01.2016.
+ * Created by Владислав on 04.01.2016
  */
 public class FlagsHard extends android.support.v4.app.Fragment implements View.OnClickListener {
     //Buttons
@@ -55,7 +56,7 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
     private TypedArray base;
     Button[] buttons = new Button[VARIANTS];
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
-    private String strtext = "Hard";
+    private String strtext;
     //private String answer;
     public String name;
     private DataBaseHelper mDatabaseHelper;
@@ -236,6 +237,7 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
         buttons[3] = button4;
         context = getActivity();
         countDownTimer = new CountDownTimerActivity(startTime, interval);
+        strtext = getString(R.string.Hard);
         //action
         numGenerator(numbers);
         LoadQuestions();
@@ -382,7 +384,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
                         if (right > 10 && ad == null) {
                             Dialog();
                         } else {
-                            closeFragment();
+                            if (isAdded()) {
+                                closeFragment();
+                            }
                         }
 
                     } else if (time == totalTime) {
@@ -394,7 +398,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
                         if (right > 10 && ad == null) {
                             Dialog();
                         } else {
-                            closeFragment();
+                            if (isAdded()) {
+                                closeFragment();
+                            }
                         }
                     } else if (time < numbers.size() && isAdded()) {
                         LoadQuestion(numbers.get(time));
@@ -414,7 +420,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
                         if (right > 10 && ad == null) {
                             Dialog();
                         } else {
-                            closeFragment();
+                            if (isAdded()) {
+                                closeFragment();
+                            }
                         }
                     }
                     return;
@@ -472,8 +480,11 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
         } else {
             ad = new AlertDialog.Builder(context);
         }
+        InputFilter[] lengthFilter = new InputFilter[1];
+        lengthFilter[0] = new InputFilter.LengthFilter(14);
         String message = getString(R.string.dialogMessage);
         final EditText input = new EditText(this.getActivity());
+        input.setFilters(lengthFilter);
         ad.setTitle(getString(R.string.gameOver));
         ad.setView(input);
         ad.setMessage(message);
@@ -482,7 +493,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
                 Editable value = input.getText();
                 name = value.toString();
                 SQLwrite(name, strtext, score);
-                closeFragment();
+                if (isAdded()) {
+                    closeFragment();
+                }
 
             }
         });
@@ -490,7 +503,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
         ad.setNegativeButton(getString(R.string.cancelButton), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
-                closeFragment();
+                if (isAdded()) {
+                    closeFragment();
+                }
             }
         });
 
@@ -515,7 +530,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
                 if (right > 10) {
                     Dialog();
                 } else {
-                    closeFragment();
+                    if (isAdded()) {
+                        closeFragment();
+                    }
                 }
 
             } else if (time == totalTime) {
@@ -528,7 +545,9 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
                 if (right > 10 && ad == null) {
                     Dialog();
                 } else {
-                    closeFragment();
+                    if (isAdded()) {
+                        closeFragment();
+                    }
                 }
             } else if (time < numbers.size() && isAdded()) {
                 LoadQuestion(numbers.get(time));

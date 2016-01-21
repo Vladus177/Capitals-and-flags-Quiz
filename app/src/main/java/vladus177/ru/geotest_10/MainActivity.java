@@ -114,17 +114,17 @@ public class MainActivity extends FragmentActivity {
         switch (item.getItemId()) {
             case MENU_EN:
                 setLocale("en");
-                Toast.makeText(this, "Locale in English !", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "English", Toast.LENGTH_LONG).show();
                 break;
 
             case MENU_ES:
                 setLocale("es");
-                Toast.makeText(this, "Locale in Spanish !", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Español", Toast.LENGTH_LONG).show();
                 break;
 
             case MENU_RU:
                 setLocale("ru");
-                Toast.makeText(this, "Locale in Russian !", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Русский", Toast.LENGTH_LONG).show();
                 break;
 
 
