@@ -28,7 +28,7 @@ import io.fabric.sdk.android.Fabric;
 
 
 public class MainActivity extends FragmentActivity {
-    final String LOG_TAG = "myLogs";
+    private final String LOG_TAG = "myLogs";
     private DataBaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
     CapitalsMedium CM;

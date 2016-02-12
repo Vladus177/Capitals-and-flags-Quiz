@@ -58,8 +58,8 @@ public class CapitalsHard extends android.support.v4.app.Fragment implements Vie
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
     private String strtext;
     //private String answer;
-    public String name;
-    final String LOG_TAG = "myLogs";
+    private String name;
+    private final String LOG_TAG = "myLogs";
     private DataBaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
     Context context;
@@ -69,8 +69,8 @@ public class CapitalsHard extends android.support.v4.app.Fragment implements Vie
     private final long startTime = 11 * 1000;
     private final long interval = 1 * 1000;
     private Toast toast = null;
-    public static final String Gamesettings = "mysettings";
-    public static final String CH_COUNTER = "CHcounter";
+    private static final String Gamesettings = "mysettings";
+    private static final String CH_COUNTER = "CHcounter";
     private SharedPreferences mSettings;
     private int maxScore=0;
 

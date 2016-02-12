@@ -57,14 +57,14 @@ public class FlagsMedium extends android.support.v4.app.Fragment implements View
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
     private String strtext;
     //private String answer;
-    public String name;
+    private String name;
     private DataBaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
     Context context;
     AlertDialog.Builder ad;
     private Toast toast = null;
-    public static final String Gamesettings = "mysettings";
-    public static final String FM_COUNTER = "FMcounter";
+    private static final String Gamesettings = "mysettings";
+    private static final String FM_COUNTER = "FMcounter";
     private SharedPreferences mSettings;
     private int maxScore=0;
 

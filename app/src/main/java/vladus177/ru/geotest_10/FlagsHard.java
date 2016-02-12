@@ -58,7 +58,7 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
     private String strtext;
     //private String answer;
-    public String name;
+    private String name;
     private DataBaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
     Context context;
@@ -68,8 +68,8 @@ public class FlagsHard extends android.support.v4.app.Fragment implements View.O
     private final long startTime = 11 * 1000;
     private final long interval = 1 * 1000;
     private Toast toast = null;
-    public static final String Gamesettings = "mysettings";
-    public static final String FH_COUNTER = "FHcounter";
+    private static final String Gamesettings = "mysettings";
+    private static final String FH_COUNTER = "FHcounter";
     private SharedPreferences mSettings;
     private int maxScore=0;
 

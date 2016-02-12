@@ -30,11 +30,11 @@ public class FirstPage extends android.support.v4.app.Fragment  {
     private int FHMaxScore=0;
     private int FMMaxScore=0;
     private SharedPreferences mSettings;
-    public static final String Gamesettings = "mysettings";
-    public static final String CM_COUNTER = "CMcounter";
-    public static final String CH_COUNTER = "CHcounter";
-    public static final String FH_COUNTER = "FHcounter";
-    public static final String FM_COUNTER = "FMcounter";
+    private static final String Gamesettings = "mysettings";
+    private static final String CM_COUNTER = "CMcounter";
+    private static final String CH_COUNTER = "CHcounter";
+    private static final String FH_COUNTER = "FHcounter";
+    private static final String FM_COUNTER = "FMcounter";
     Toast toast = null;
     Context context;
 

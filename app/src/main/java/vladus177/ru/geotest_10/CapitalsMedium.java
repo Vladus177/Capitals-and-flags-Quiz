@@ -56,23 +56,21 @@ public class CapitalsMedium extends android.support.v4.app.Fragment implements V
     ArrayList<Integer> numbers = new ArrayList<>(QUESTIONS);
     private String strtext;
     //public String answer;
-    public String name;
-    final String LOG_TAG = "myLogs";
+    private String name;
+    private final String LOG_TAG = "myLogs";
     private DataBaseHelper mDatabaseHelper;
     private SQLiteDatabase mSqLiteDatabase;
     Context context;
     AlertDialog.Builder ad = null;
     private Toast toast = null;
-    public static final String Gamesettings = "mysettings";
-    public static final String CM_COUNTER = "CMcounter";
+    private static final String Gamesettings = "mysettings";
+    private static final String CM_COUNTER = "CMcounter";
     private SharedPreferences mSettings;
     private int maxScore=0;
 
     //counts
     int wrong = 0;
     int right = 0;
-
-
     int time = 0;
     int totalTime = 50;
     int current_right = 0;
